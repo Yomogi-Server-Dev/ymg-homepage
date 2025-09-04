@@ -65,7 +65,7 @@ export function ContentBlocks({
         <DialogContent className='max-w-4xl p-0' forceMount>
           {selectedItem && (
             <>
-              <DialogHeader className='px-6 py-4'>
+              <DialogHeader className='px-6 pt-4'>
                 <div className='flex items-center gap-3'>
                   <div className='p-3 rounded-full bg-primary/10'>
                     <selectedItem.icon className='w-6 h-6 text-primary' />
@@ -85,7 +85,7 @@ export function ContentBlocks({
                   src={selectedItem.imageUrl}
                   alt={selectedItem.detailTitle}
                   fill
-                  className='object-cover'
+                  className='object-cover rounded-lg p-1'
                 />
               </AspectRatio>
             </>
