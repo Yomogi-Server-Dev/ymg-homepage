@@ -1,102 +1,200 @@
+import { Camera, Car, Menu, MessageCircle } from "lucide-react";
 import Image from "next/image";
+import { AdminList } from "@/components/admin-list";
+import { EventBlocks } from "@/components/event-blocks";
+import { FeatureBlocks } from "@/components/feature-blocks";
+import { HeroCarousel } from "@/components/hero-carousel";
+import { ServerStatus } from "@/components/server-status";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-white">
+      {/* ヘッダー */}
+      <header className="border-b sticky top-0 bg-white/95 backdrop-blur-sm z-50">
+        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+          <h1 className="text-2xl font-bold text-primary">Yomogi Server</h1>
+          <nav className="flex items-center gap-4">
+            <Button
+              variant="outline"
+              className="flex items-center gap-2"
+              onClick={() =>
+                window.open("https://discord.gg/yourserver", "_blank")
+              }
+            >
+              <MessageCircle className="w-4 h-4" />
+              Discordはこちら
+            </Button>
+            <Button variant="ghost" size="icon">
+              <Menu className="w-5 h-5" />
+            </Button>
+          </nav>
         </div>
+      </header>
+
+      <main>
+        {/* ヒーローセクション - 画像カルーセル */}
+        <section className="relative">
+          <HeroCarousel />
+        </section>
+
+        {/* サーバー状態セクション */}
+        <section className="container mx-auto px-4 py-16">
+          <ServerStatus />
+
+          <div className="mt-8 text-center">
+            <h2 className="text-3xl font-bold mb-4">
+              Yomogi Serverへようこそ！
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              みんなで楽しく生活できるサバイバルサーバーです。
+              車に乗ったり、イベントに参加したり、自由に建築を楽しめます！
+            </p>
+          </div>
+
+          {/* メイン画像 */}
+          <div className="mt-12 rounded-lg overflow-hidden shadow-lg">
+            <Image
+              src="/img.png"
+              alt="Yomogi Server"
+              width={1200}
+              height={600}
+              className="w-full h-auto"
+            />
+          </div>
+        </section>
+
+        <Separator className="container mx-auto" />
+
+        {/* 機能紹介セクション */}
+        <section className="container mx-auto px-4 py-16">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            何ができるの？
+          </h2>
+          <FeatureBlocks />
+        </section>
+
+        <Separator className="container mx-auto" />
+
+        {/* イベントセクション */}
+        <section className="container mx-auto px-4 py-16 gradient-primary">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            イベントが盛りだくさん！
+          </h2>
+          <EventBlocks />
+        </section>
+
+        <Separator className="container mx-auto" />
+
+        {/* 車機能セクション */}
+        <section className="container mx-auto px-4 py-16">
+          <h2 className="text-3xl font-bold text-center mb-12 flex items-center justify-center gap-3">
+            <Car className="w-8 h-8 text-primary" />
+            車が使えるよ！
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="rounded-lg overflow-hidden shadow-lg bg-gray-100 h-64 flex items-center justify-center">
+              <p className="text-gray-500">車の写真をここに配置</p>
+            </div>
+            <div className="rounded-lg overflow-hidden shadow-lg bg-gray-100 h-64 flex items-center justify-center">
+              <p className="text-gray-500">車の動画をここに配置</p>
+            </div>
+          </div>
+        </section>
+
+        <Separator className="container mx-auto" />
+
+        {/* サーバーの様子 */}
+        <section className="container mx-auto px-4 py-16">
+          <h2 className="text-3xl font-bold text-center mb-12 flex items-center justify-center gap-3">
+            <Camera className="w-8 h-8 text-primary" />
+            サーバーの様子
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="rounded-lg overflow-hidden shadow-lg bg-gray-100 h-64 flex items-center justify-center">
+              <p className="text-gray-500">写真1をここに配置</p>
+            </div>
+            <div className="rounded-lg overflow-hidden shadow-lg bg-gray-100 h-64 flex items-center justify-center">
+              <p className="text-gray-500">写真2をここに配置</p>
+            </div>
+            <div className="rounded-lg overflow-hidden shadow-lg bg-gray-100 h-64 flex items-center justify-center">
+              <p className="text-gray-500">写真3をここに配置</p>
+            </div>
+            <div className="rounded-lg overflow-hidden shadow-lg bg-gray-100 h-64 flex items-center justify-center">
+              <p className="text-gray-500">動画をここに配置</p>
+            </div>
+          </div>
+        </section>
+
+        <Separator className="container mx-auto" />
+
+        {/* 運営一覧 */}
+        <section className="container mx-auto px-4 py-16 gradient-primary">
+          <h2 className="text-3xl font-bold text-center mb-12">運営一覧</h2>
+          <AdminList />
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      {/* フッター */}
+      <footer className="bg-gray-900 text-white py-8 mt-16">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="font-bold text-lg mb-4 text-primary">
+                Yomogi Server
+              </h3>
+              <p className="text-gray-400">
+                MCBE サバイバルサーバー
+                <br />
+                ymg24.org:19132
+              </p>
+            </div>
+            <div>
+              <h3 className="font-bold text-lg mb-4">リンク</h3>
+              <ul className="space-y-2 text-gray-400">
+                <li>
+                  <a href="#" className="hover:text-primary transition-colors">
+                    利用規約
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-primary transition-colors">
+                    プライバシーポリシー
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-primary transition-colors">
+                    お問い合わせ
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-bold text-lg mb-4">コミュニティ</h3>
+              <ul className="space-y-2 text-gray-400">
+                <li>
+                  <a href="#" className="hover:text-primary transition-colors">
+                    Discord
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-primary transition-colors">
+                    Twitter
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-primary transition-colors">
+                    YouTube
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
+            <p>&copy; 2024 Yomogi Server. All rights reserved.</p>
+          </div>
+        </div>
       </footer>
     </div>
   );
