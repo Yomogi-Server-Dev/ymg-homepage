@@ -8,10 +8,9 @@ export function Header() {
     return (
         <header className="border-b sticky top-0 bg-white/80 backdrop-blur-sm z-50">
             <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-                <Link href="/">
-                    <h1 className="text-2xl font-bold">
-                        Yomogi Server
-                    </h1>
+                <Link href="/" className="flex items-center gap-2">
+                    <img src="/icon.png" alt="Yomogi Server icon" className="h-12 w-12" />
+                    <h1 className="text-2xl font-bold max-sm:hidden">Yomogi Server</h1>
                 </Link>
                 <nav className="flex items-center gap-4">
                     <Link
