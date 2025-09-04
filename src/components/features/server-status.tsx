@@ -10,11 +10,7 @@ interface ServerData {
   players: number;
   maxPlayers: number;
   version: string;
-  motd: string;
-  latency: number;
-  playersList: string[];
   software: string;
-  gamemode: string;
 }
 
 export function ServerStatus() {
@@ -23,11 +19,7 @@ export function ServerStatus() {
     players: 0,
     maxPlayers: 50,
     version: 'Unknown',
-    motd: 'よもぎサーバー',
-    latency: 0,
-    playersList: [],
     software: 'PocketMine-MP',
-    gamemode: 'Survival',
   });
   const [loading, setLoading] = useState(true);
 
