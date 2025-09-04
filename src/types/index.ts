@@ -50,4 +50,3 @@ export interface CarouselConfig {
   showIndicators: boolean;
   pauseOnHover: boolean;
 }
-

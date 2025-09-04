@@ -55,8 +55,8 @@ export function Navigation() {
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
-          <Button variant="ghost" size="lg" className="relative">
-              <Menu className="w-8 h-8" />
+        <Button variant="ghost" size="lg" className="relative">
+          <Menu className="w-8 h-8" />
           <span className="sr-only">メニューを開く</span>
         </Button>
       </SheetTrigger>

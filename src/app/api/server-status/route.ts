@@ -52,11 +52,7 @@ export async function GET() {
       players: data.players?.online || 0,
       maxPlayers: data.players?.max || 50,
       version: data.version?.name || "Unknown",
-      motd: data.motd?.clean || "よもぎサーバー",
-      latency: 0, // mcstatus.io APIではレイテンシは提供されない
-      playersList: data.players?.list?.map((player) => player.name_clean) || [],
       software: data.software || "PocketMine-MP",
-      gamemode: data.gamemode || "Survival",
     };
 
     return NextResponse.json(serverData);
@@ -69,11 +65,7 @@ export async function GET() {
       players: 0,
       maxPlayers: 50,
       version: "v1.21.100",
-      motd: "[生活鯖]よもぎサーバー",
-      latency: 0,
-      playersList: [],
       software: "PocketMine-MP",
-      gamemode: "Survival",
     });
   }
 }
