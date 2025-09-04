@@ -50,7 +50,7 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold text-center mb-12">
             何ができるの？
           </h2>
-          <h3 className="text-xl font-semibold mb-4">
+          <h3 className="text-xl font-semibold mb-4 text-center">
             タップして詳細を確認してみよう！
           </h3>
           <FeatureBlocks />
