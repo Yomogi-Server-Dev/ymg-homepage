@@ -29,6 +29,14 @@ export function CarFeature() {
           </div>
         ))}
       </div>
+        <a
+            href='https://example.com'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='text-primary-500 underline hover:text-primary-700'
+        >
+            お車の購入はこちら
+        </a>
 
       {/* YouTube動画 */}
       {carFeatureVideo.youtubeId && (

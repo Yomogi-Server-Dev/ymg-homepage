@@ -4,12 +4,13 @@ import { Card } from '@/components/ui/card';
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { features } from '@/data/features';
 import type { Feature } from '@/types';
+import Image from 'next/image';
 import { useState } from 'react';
 
 export function FeatureBlocks() {
@@ -42,10 +43,10 @@ export function FeatureBlocks() {
         open={!!selectedFeature}
         onOpenChange={() => setSelectedFeature(null)}
       >
-        <DialogContent className='max-w-2xl' forceMount>
+        <DialogContent className='max-w-4xl p-0' forceMount>
           {selectedFeature && (
             <>
-              <DialogHeader>
+              <DialogHeader className='px-6 py-4'>
                 <div className='flex items-center gap-3'>
                   <div className='p-3 rounded-full bg-primary/10'>
                     <selectedFeature.icon className='w-6 h-6 text-primary' />
@@ -55,9 +56,14 @@ export function FeatureBlocks() {
                   </DialogTitle>
                 </div>
               </DialogHeader>
-              <DialogDescription className='whitespace-pre-line text-base mt-4 text-gray-700'>
-                {selectedFeature.detailContent}
-              </DialogDescription>
+              <AspectRatio ratio={16 / 9} className='bg-muted'>
+                <Image
+                  src={selectedFeature.imageUrl}
+                  alt={selectedFeature.detailTitle}
+                  fill
+                  className='object-cover'
+                />
+              </AspectRatio>
             </>
           )}
         </DialogContent>

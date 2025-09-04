@@ -59,7 +59,12 @@
       "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-homepage/**)",
       "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-homepage\\src\\app/**)",
       "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-homepage\\src\\components\\ui/**)",
-      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-homepage\\src\\components\\ui/**)"
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-homepage\\src\\components\\ui/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-homepage\\src\\components\\features/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-homepage\\src\\data/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-homepage\\src\\types/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-homepage\\src\\data/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-homepage\\src\\components\\features/**)"
     ],
     "deny": [],
     "ask": []
