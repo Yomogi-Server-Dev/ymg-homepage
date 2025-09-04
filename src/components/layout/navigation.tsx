@@ -32,22 +32,22 @@ export function Navigation() {
 
   const handleNavClick = (href: string) => {
     setIsOpen(false);
-    
+
     if (href === "#") {
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
-    
+
     const targetId = href.replace("#", "");
     const element = document.getElementById(targetId);
     if (element) {
       const offset = 80; // ヘッダーの高さ分オフセット
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.scrollY - offset;
-      
+
       window.scrollTo({
         top: offsetPosition,
-        behavior: "smooth"
+        behavior: "smooth",
       });
     }
   };
@@ -84,7 +84,7 @@ export function Navigation() {
             })}
           </ul>
         </nav>
-        
+
         <div className="absolute bottom-8 left-6 right-6">
           <div className="border-t pt-6">
             <p className="text-sm text-gray-500 text-center">

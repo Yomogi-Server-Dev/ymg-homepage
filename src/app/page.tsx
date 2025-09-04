@@ -46,7 +46,6 @@ export default function HomePage() {
 
         <Separator className="mx-auto" />
 
-
         <section id="features" className="px-4 py-16">
           <h2 className="text-3xl font-bold text-center mb-12">
             何ができるの？
@@ -59,8 +58,10 @@ export default function HomePage() {
 
         <Separator className="mx-auto" />
 
-
-        <section id="events" className="mx-4 px-4 py-16 gradient-primary rounded-lg">
+        <section
+          id="events"
+          className="mx-4 px-4 py-16 gradient-primary rounded-lg"
+        >
           <h2 className="text-3xl font-bold text-center mb-12">
             イベントが盛りだくさん！
           </h2>
@@ -69,11 +70,9 @@ export default function HomePage() {
 
         <Separator className="mx-auto" />
 
-
         <CarFeature />
 
         <Separator className="mx-auto" />
-
 
         <section id="gallery">
           <ServerGallery />
@@ -81,15 +80,16 @@ export default function HomePage() {
 
         <Separator className="mx-auto" />
 
-
         <section id="status">
           <ServerStatus />
         </section>
 
         <Separator className="mx-auto" />
 
-
-        <section id="admins" className="mx-4 px-4 py-16 gradient-primary rounded-lg">
+        <section
+          id="admins"
+          className="mx-4 px-4 py-16 gradient-primary rounded-lg"
+        >
           <h2 className="text-3xl font-bold text-center mb-12">運営一覧</h2>
           <AdminList />
         </section>

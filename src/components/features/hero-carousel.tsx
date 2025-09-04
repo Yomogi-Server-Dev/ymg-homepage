@@ -76,14 +76,15 @@ export function HeroCarousel() {
                 variant="outline"
                 className="bg-white/20 backdrop-blur-sm text-white border-white hover:bg-white/30"
                 onClick={() => {
-                  const element = document.getElementById('features');
+                  const element = document.getElementById("features");
                   if (element) {
                     const offset = 80;
                     const elementPosition = element.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.scrollY - offset;
+                    const offsetPosition =
+                      elementPosition + window.scrollY - offset;
                     window.scrollTo({
                       top: offsetPosition,
-                      behavior: 'smooth'
+                      behavior: "smooth",
                     });
                   }
                 }}
