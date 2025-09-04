@@ -1,4 +1,4 @@
-import type { LucideIcon } from "lucide-react";
+import type { LucideIcon } from 'lucide-react';
 
 export interface CarouselImage {
   id: string;
@@ -8,14 +8,14 @@ export interface CarouselImage {
 
 export interface MediaItem {
   id: string;
-  type: "image" | "video" | "youtube";
+  type: 'image' | 'video' | 'youtube';
   src: string;
   alt?: string;
   title?: string;
   youtubeId?: string;
 }
 
-export type AdminRole = "Owner" | "Admin" | "Moderator" | "Builder";
+export type AdminRole = 'Owner' | 'Admin' | 'Moderator' | 'Builder';
 
 export interface Admin {
   id: number;
@@ -29,7 +29,7 @@ export interface Event {
   id: number;
   title: string;
   icon: LucideIcon;
-  status: "active" | "upcoming";
+  status: 'active' | 'upcoming';
   schedule: string;
   description: string;
   detailContent: string;

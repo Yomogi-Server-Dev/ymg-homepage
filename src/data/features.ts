@@ -1,13 +1,13 @@
-import { Briefcase, Gamepad2, Home, Users } from "lucide-react";
-import type { Feature } from "@/types";
+import type { Feature } from '@/types';
+import { Briefcase, Gamepad2, Home, Users } from 'lucide-react';
 
 export const features: Feature[] = [
   {
     id: 1,
-    title: "生活",
+    title: '生活',
     icon: Home,
-    description: "自由に家を建てて暮らそう",
-    detailTitle: "生活システム",
+    description: '自由に家を建てて暮らそう',
+    detailTitle: '生活システム',
     detailContent: `Yomogi Serverでは、自由に建築を楽しめます。
 
 • 広大な土地で自分だけの家を建築
@@ -19,10 +19,10 @@ export const features: Feature[] = [
   },
   {
     id: 2,
-    title: "仕事",
+    title: '仕事',
     icon: Briefcase,
-    description: "様々な職業で稼ごう",
-    detailTitle: "仕事システム",
+    description: '様々な職業で稼ごう',
+    detailTitle: '仕事システム',
     detailContent: `多彩な職業システムで経済活動を楽しもう！
 
 • 農家：作物を育てて販売
@@ -34,10 +34,10 @@ export const features: Feature[] = [
   },
   {
     id: 3,
-    title: "ミニゲーム",
+    title: 'ミニゲーム',
     icon: Gamepad2,
-    description: "楽しいゲームが盛りだくさん",
-    detailTitle: "ミニゲーム",
+    description: '楽しいゲームが盛りだくさん',
+    detailTitle: 'ミニゲーム',
     detailContent: `飽きることのない様々なミニゲーム！
 
 • PvPアリーナ：スキルを競い合おう
@@ -49,10 +49,10 @@ export const features: Feature[] = [
   },
   {
     id: 4,
-    title: "コミュニティ",
+    title: 'コミュニティ',
     icon: Users,
-    description: "みんなで楽しく交流",
-    detailTitle: "コミュニティ機能",
+    description: 'みんなで楽しく交流',
+    detailTitle: 'コミュニティ機能',
     detailContent: `活発なコミュニティで新しい友達を作ろう！
 
 • ギルドシステム：仲間と協力してギルドを発展

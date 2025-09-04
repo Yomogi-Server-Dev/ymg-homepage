@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useState } from "react";
-import type { CarouselConfig, CarouselImage } from "@/types";
+import type { CarouselConfig, CarouselImage } from '@/types';
+import { useCallback, useEffect, useState } from 'react';
 
 interface UseCarouselProps {
   images: CarouselImage[];

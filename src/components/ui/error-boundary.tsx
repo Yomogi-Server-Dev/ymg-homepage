@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { Component, type ErrorInfo, type ReactNode } from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
+import { Component, type ErrorInfo, type ReactNode } from 'react';
 
 interface Props {
   children: ReactNode;
@@ -23,7 +23,7 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 
   public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error("ErrorBoundary caught an error:", error, errorInfo);
+    console.error('ErrorBoundary caught an error:', error, errorInfo);
   }
 
   public render() {
@@ -33,20 +33,20 @@ export class ErrorBoundary extends Component<Props, State> {
       }
 
       return (
-        <div className="flex flex-col items-center justify-center min-h-[200px] p-6 text-center">
-          <div className="space-y-4">
-            <div className="text-red-500 text-6xl">⚠️</div>
-            <h2 className="text-2xl font-bold text-gray-900">
+        <div className='flex flex-col items-center justify-center min-h-[200px] p-6 text-center'>
+          <div className='space-y-4'>
+            <div className='text-red-500 text-6xl'>⚠️</div>
+            <h2 className='text-2xl font-bold text-gray-900'>
               エラーが発生しました
             </h2>
-            <p className="text-gray-600 max-w-md">
+            <p className='text-gray-600 max-w-md'>
               申し訳ございません。予期しないエラーが発生しました。
               ページを再読み込みしてもう一度お試しください。
             </p>
-            <div className="flex gap-2 justify-center">
+            <div className='flex gap-2 justify-center'>
               <Button
                 onClick={() => window.location.reload()}
-                variant="default"
+                variant='default'
               >
                 ページを再読み込み
               </Button>
@@ -54,17 +54,17 @@ export class ErrorBoundary extends Component<Props, State> {
                 onClick={() =>
                   this.setState({ hasError: false, error: undefined })
                 }
-                variant="outline"
+                variant='outline'
               >
                 再試行
               </Button>
             </div>
-            {process.env.NODE_ENV === "development" && this.state.error && (
-              <details className="mt-4 text-left">
-                <summary className="cursor-pointer text-sm text-gray-500">
+            {process.env.NODE_ENV === 'development' && this.state.error && (
+              <details className='mt-4 text-left'>
+                <summary className='cursor-pointer text-sm text-gray-500'>
                   エラー詳細（開発モード）
                 </summary>
-                <pre className="mt-2 p-2 bg-gray-100 rounded text-xs overflow-auto">
+                <pre className='mt-2 p-2 bg-gray-100 rounded text-xs overflow-auto'>
                   {this.state.error.message}
                   {this.state.error.stack}
                 </pre>

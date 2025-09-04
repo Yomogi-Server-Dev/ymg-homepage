@@ -7,19 +7,19 @@ interface YouTubeEmbedProps {
 export function YouTubeEmbed({
   videoId,
   title,
-  className = "",
+  className = '',
 }: YouTubeEmbedProps) {
   return (
     <div
       className={`relative w-full ${className}`}
-      style={{ aspectRatio: "2 / 1.5" }}
+      style={{ aspectRatio: '2 / 1.5' }}
     >
       <iframe
         src={`https://www.youtube.com/embed/${videoId}`}
-        title={title || "YouTube video"}
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        title={title || 'YouTube video'}
+        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
         allowFullScreen
-        className="absolute inset-0 w-full h-full rounded-lg shadow-lg"
+        className='absolute inset-0 w-full h-full rounded-lg shadow-lg'
       />
     </div>
   );
