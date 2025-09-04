@@ -1,5 +1,6 @@
 'use client';
 
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import {
@@ -8,7 +9,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
-import { AspectRatio } from '@/components/ui/aspect-ratio';
 import type { ContentItem } from '@/types';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -18,9 +18,9 @@ interface ContentBlocksProps {
   gridCols?: string;
 }
 
-export function ContentBlocks({ 
-  items, 
-  gridCols = 'grid sm:grid-cols-2 md:grid-cols-3 gap-6' 
+export function ContentBlocks({
+  items,
+  gridCols = 'grid sm:grid-cols-2 md:grid-cols-3 gap-6',
 }: ContentBlocksProps) {
   const [selectedItem, setSelectedItem] = useState<ContentItem | null>(null);
 
@@ -61,10 +61,7 @@ export function ContentBlocks({
         })}
       </div>
 
-      <Dialog
-        open={!!selectedItem}
-        onOpenChange={() => setSelectedItem(null)}
-      >
+      <Dialog open={!!selectedItem} onOpenChange={() => setSelectedItem(null)}>
         <DialogContent className='max-w-4xl p-0' forceMount>
           {selectedItem && (
             <>

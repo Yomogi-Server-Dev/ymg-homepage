@@ -35,7 +35,9 @@ export function AdminList() {
             </div>
           </div>
           <div className='mb-2'>
-            <p className='text-sm text-primary font-medium'>@{admin.gamerTag}</p>
+            <p className='text-sm text-primary font-medium'>
+              @{admin.gamerTag}
+            </p>
           </div>
           <p className='text-sm text-gray-600 leading-relaxed'>
             {admin.description}

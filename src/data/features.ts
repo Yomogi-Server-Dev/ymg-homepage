@@ -8,7 +8,7 @@ export const features: Feature[] = [
     icon: Home,
     description: [
       '誰でも本格的な会社経営を行うことができるようになります。',
-      '会社は運営に申告すれば誰でも無料で設立できますが、設立の際は一定の審査があります。'
+      '会社は運営に申告すれば誰でも無料で設立できますが、設立の際は一定の審査があります。',
     ],
     detailTitle: '会社システム',
     imageUrl: '/pictures/index/top/life1.png',

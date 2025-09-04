@@ -4,13 +4,13 @@ export const carFeatureImages: MediaItem[] = [
   {
     id: 'car-image-1',
     type: 'image',
-    src: '/pictures/index/car/car1.png',
+    src: '/pictures/index/car/car1.jpeg',
     alt: '車の紹介1',
   },
   {
     id: 'car-image-2',
     type: 'image',
-    src: '/pictures/index/car/car2.png',
+    src: '/pictures/index/car/car2.jpeg',
     alt: '車の紹介2',
   },
 ];
