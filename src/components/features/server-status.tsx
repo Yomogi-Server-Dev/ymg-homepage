@@ -53,7 +53,7 @@ export function ServerStatus() {
   }, []);
 
   return (
-    <Card className="p-6 max-w-4xl mx-auto">
+    <Card className="p-6 my-16 max-w-4xl mx-auto">
       <div className="grid md:grid-cols-3 gap-6">
         {/* サーバー状態 */}
         <div className="flex items-center gap-4">
