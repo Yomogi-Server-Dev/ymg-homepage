@@ -18,16 +18,16 @@ export default function HomePage() {
       <Header />
 
       <main className="flex-grow max-w-4xl mx-auto">
-        <section className="relative">
+        <section className="relative my-12">
           <HeroCarousel />
         </section>
 
         <section className="px-4 py-16">
-          <div className="mt-8 text-center">
-            <h2 className="text-3xl font-bold mb-4">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold mb-4 text-primary animate-slide-up">
               Yomogi Serverへようこそ！
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto animate-slide-up">
               みんなで楽しく生活できるサバイバルサーバーです。
               車に乗ったり、イベントに参加したり、自由に建築を楽しめます！
             </p>

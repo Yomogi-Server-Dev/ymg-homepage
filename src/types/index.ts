@@ -44,18 +44,6 @@ export interface Feature {
   icon: LucideIcon;
 }
 
-export interface RoleColors {
-  [key: string]: string;
-}
-
-export interface ServerStatusData {
-  isOnline: boolean;
-  playerCount: number;
-  maxPlayers: number;
-  version: string;
-  lastUpdated: string;
-}
-
 export interface CarouselConfig {
   autoPlayInterval: number;
   showArrows: boolean;
@@ -63,10 +51,3 @@ export interface CarouselConfig {
   pauseOnHover: boolean;
 }
 
-export interface SectionConfig {
-  id: string;
-  title: string;
-  subtitle?: string;
-  className?: string;
-  showSeparator?: boolean;
-}

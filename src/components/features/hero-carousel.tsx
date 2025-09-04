@@ -31,7 +31,6 @@ export function HeroCarousel() {
         role="region"
         aria-label="Image carousel"
       >
-        {/* 画像表示 */}
         <div className="relative w-full h-full">
           {carouselImages.map((image, index) => (
             <div
@@ -51,19 +50,17 @@ export function HeroCarousel() {
                 className="object-cover"
                 priority={index === 0}
               />
-              {/* オーバーレイ */}
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50" />
             </div>
           ))}
         </div>
 
-        {/* ヒーローテキスト */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center text-white z-10">
             <h1 className="text-5xl md:text-7xl font-bold mb-4 drop-shadow-lg animate-fade-in">
               {APP_CONFIG.name}
             </h1>
-            <p className="text-xl md:text-2xl drop-shadow-lg animate-slide-up">
+            <p className="text-xl md:text-2xl drop-shadow-lg animate-fade-in">
               {APP_CONFIG.description}
             </p>
             <div className="mt-8 space-x-4 animate-fade-in">
@@ -97,7 +94,6 @@ export function HeroCarousel() {
           </div>
         </div>
 
-        {/* ナビゲーションボタン */}
         {config.showArrows && (
           <>
             <Button
@@ -117,7 +113,6 @@ export function HeroCarousel() {
           </>
         )}
 
-        {/* インジケーター */}
         {config.showIndicators && (
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
             {carouselImages.map((image, index) => (
