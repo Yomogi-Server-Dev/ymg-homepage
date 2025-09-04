@@ -1,33 +1,31 @@
 "use client";
 
-import { MessageCircle } from "lucide-react";
+import {MessageCircle} from "lucide-react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Navigation } from "./navigation";
+import {Navigation} from "./navigation";
 
 export function Header() {
-  return (
-    <header className="border-b sticky top-0 bg-white/95 backdrop-blur-sm z-50">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/">
-          <h1 className="text-2xl font-bold text-primary hover:text-primary/80 transition-colors">
-            Yomogi Server
-          </h1>
-        </Link>
-        <nav className="flex items-center gap-4">
-          <Button
-            variant="outline"
-            className="flex items-center gap-2"
-            onClick={() =>
-              window.open("https://discord.gg/qkjfv5YGvY", "_blank")
-            }
-          >
-            <MessageCircle className="w-4 h-4" />
-            Discordはこちら
-          </Button>
-          <Navigation />
-        </nav>
-      </div>
-    </header>
-  );
+    return (
+        <header className="border-b sticky top-0 bg-white/80 backdrop-blur-sm z-50">
+            <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+                <Link href="/">
+                    <h1 className="text-2xl font-bold">
+                        Yomogi Server
+                    </h1>
+                </Link>
+                <nav className="flex items-center gap-4">
+                    <Link
+                        href="https://discord.gg/qkjfv5YGvY"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2"
+                    >
+                        <MessageCircle className="w-4 h-4"/>
+                        Discordはこちら
+                    </Link>
+                    <Navigation/>
+                </nav>
+            </div>
+        </header>
+    );
 }
