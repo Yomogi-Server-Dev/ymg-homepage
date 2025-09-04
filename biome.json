@@ -1,35 +1,36 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-  "vcs": {
-    "enabled": false,
-    "clientKind": "git",
-    "useIgnoreFile": false
-  },
-  "files": {
-    "ignore": [
-      "node_modules",
-      "tsconfig.*.json",
-      "src/sm2/js/lowLag.js",
-      "src/sm2/swf/soundmanager2-nodebug-jsmin.js"
-    ]
-  },
-  "formatter": {
-    "enabled": true,
-    "lineWidth": 80,
-    "indentStyle": "space"
-  },
-  "organizeImports": {
-    "enabled": true
-  },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "recommended": true
-    }
-  },
-  "javascript": {
+    "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+    "vcs": {
+        "enabled": false,
+        "clientKind": "git",
+        "useIgnoreFile": false
+    },
+    "files": {
+        "ignore": [
+            "node_modules",
+            "tsconfig.*.json",
+            "src/sm2/js/lowLag.js",
+            "src/sm2/swf/soundmanager2-nodebug-jsmin.js"
+        ]
+    },
     "formatter": {
-      "quoteStyle": "double"
+        "enabled": true,
+        "lineWidth": 80,
+        "indentStyle": "space"
+    },
+    "organizeImports": {
+        "enabled": true
+    },
+    "linter": {
+        "enabled": true,
+        "rules": {
+            "recommended": true
+        }
+    },
+    "javascript": {
+        "formatter": {
+            "quoteStyle": "single",
+            "jsxQuoteStyle": "single"
+        }
     }
-  }
 }
