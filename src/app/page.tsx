@@ -17,12 +17,12 @@ export default function HomePage() {
     <div className="min-h-screen bg-white flex flex-col">
       <Header />
 
-      <main className="flex-grow">
+      <main className="flex-grow max-w-4xl mx-auto">
         <section className="relative">
           <HeroCarousel />
         </section>
 
-        <section className="container mx-auto px-4 py-16">
+        <section className="px-4 py-16">
           <div className="mt-8 text-center">
             <h2 className="text-3xl font-bold mb-4">
               Yomogi Serverへようこそ！
@@ -44,39 +44,39 @@ export default function HomePage() {
           </div>
         </section>
 
-        <Separator className="container mx-auto" />
+        <Separator className="mx-auto" />
 
-        <section className="container mx-auto px-4 py-16">
+        <section className="px-4 py-16">
           <h2 className="text-3xl font-bold text-center mb-12">
             何ができるの？
           </h2>
           <FeatureBlocks />
         </section>
 
-        <Separator className="container mx-auto" />
+        <Separator className="mx-auto" />
 
-        <section className="container mx-auto px-4 py-16 gradient-primary rounded-lg">
+        <section className="mx-4 px-4 py-16 gradient-primary rounded-lg">
           <h2 className="text-3xl font-bold text-center mb-12">
             イベントが盛りだくさん！
           </h2>
           <EventBlocks />
         </section>
 
-        <Separator className="container mx-auto" />
+        <Separator className="mx-auto" />
 
         <CarFeature />
 
-        <Separator className="container mx-auto" />
+        <Separator className="mx-auto" />
 
         <ServerGallery />
 
-        <Separator className="container mx-auto" />
+        <Separator className="mx-auto" />
 
         <ServerStatus />
 
-        <Separator className="container mx-auto" />
+        <Separator className="mx-auto" />
 
-        <section className="container mx-auto px-4 py-16 gradient-primary rounded-lg">
+        <section className="mx-4 px-4 py-16 gradient-primary rounded-lg">
           <h2 className="text-3xl font-bold text-center mb-12">運営一覧</h2>
           <AdminList />
         </section>

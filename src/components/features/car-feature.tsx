@@ -6,7 +6,7 @@ import { carFeatureMedia } from "@/data/media";
 
 export function CarFeature() {
   return (
-    <section className="container mx-auto px-4 py-16">
+    <section className="px-4 py-16">
       <h2 className="text-3xl font-bold text-center mb-12 flex items-center justify-center gap-3">
         <Car className="w-8 h-8 text-primary" />
         車も乗れます！
