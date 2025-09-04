@@ -34,7 +34,21 @@
       "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\data/**)",
       "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\components\\features/**)",
       "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\components\\features/**)",
-      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\types/**)"
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\types/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\components\\features/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\components\\features/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\app/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\components\\layout/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\components\\features/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\components\\features/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\components\\features/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\components\\features/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\components\\features/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\components\\layout/**)",
+      "Bash(npm run dev:*)",
+      "Bash(del \"C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\app\\globals.css\")",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\app/**)"
     ],
     "deny": [],
     "ask": []

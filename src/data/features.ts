@@ -1,9 +1,4 @@
-import {
-  Briefcase,
-  Gamepad2,
-  Home,
-  Users,
-} from "lucide-react";
+import { Briefcase, Gamepad2, Home, Users } from "lucide-react";
 import type { Feature } from "@/types";
 
 export const features: Feature[] = [

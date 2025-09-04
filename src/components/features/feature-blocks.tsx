@@ -9,8 +9,8 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import type { Feature } from "@/types";
 import { features } from "@/data/features";
+import type { Feature } from "@/types";
 
 export function FeatureBlocks() {
   const [selectedFeature, setSelectedFeature] = useState<Feature | null>(null);

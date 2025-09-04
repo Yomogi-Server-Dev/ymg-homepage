@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import type { CarouselImage, CarouselConfig } from "@/types";
+import type { CarouselConfig, CarouselImage } from "@/types";
 
 interface UseCarouselProps {
   images: CarouselImage[];
@@ -31,11 +31,14 @@ export function useCarousel({ images, config }: UseCarouselProps) {
     );
   }, [images.length]);
 
-  const goToSlide = useCallback((index: number) => {
-    if (index >= 0 && index < images.length) {
-      setCurrentIndex(index);
-    }
-  }, [images.length]);
+  const goToSlide = useCallback(
+    (index: number) => {
+      if (index >= 0 && index < images.length) {
+        setCurrentIndex(index);
+      }
+    },
+    [images.length],
+  );
 
   const play = useCallback(() => setIsPlaying(true), []);
   const pause = useCallback(() => setIsPlaying(false), []);

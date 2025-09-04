@@ -1,22 +1,26 @@
-import type { Event, Feature, Admin } from "@/types";
+import type { Admin, Event, Feature } from "@/types";
 
-export function filterEventsByStatus(events: Event[], status?: "active" | "upcoming") {
+export function filterEventsByStatus(
+  events: Event[],
+  status?: "active" | "upcoming",
+) {
   if (!status) return events;
-  return events.filter(event => event.status === status);
+  return events.filter((event) => event.status === status);
 }
 
 export function filterAdminsByRole(admins: Admin[], role?: string) {
   if (!role) return admins;
-  return admins.filter(admin => admin.role === role);
+  return admins.filter((admin) => admin.role === role);
 }
 
 export function searchFeatures(features: Feature[], query: string) {
   if (!query.trim()) return features;
-  
+
   const lowercaseQuery = query.toLowerCase();
-  return features.filter(feature =>
-    feature.title.toLowerCase().includes(lowercaseQuery) ||
-    feature.description.toLowerCase().includes(lowercaseQuery)
+  return features.filter(
+    (feature) =>
+      feature.title.toLowerCase().includes(lowercaseQuery) ||
+      feature.description.toLowerCase().includes(lowercaseQuery),
   );
 }
 

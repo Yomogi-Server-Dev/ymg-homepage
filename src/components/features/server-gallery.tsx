@@ -12,11 +12,14 @@ export function ServerGallery() {
         <Camera className="w-8 h-8 text-primary" />
         サーバーの様子
       </h2>
-      
+
       {/* 画像ブロック群 */}
       <div className="grid md:grid-cols-2 gap-8 mb-12">
         {serverGalleryImages.map((image) => (
-          <div key={image.id} className="rounded-lg overflow-hidden shadow-lg bg-gray-100 h-64 relative">
+          <div
+            key={image.id}
+            className="rounded-lg overflow-hidden shadow-lg bg-gray-100 h-64 relative"
+          >
             <Image
               src={image.src}
               alt={image.alt || "サーバーの様子"}

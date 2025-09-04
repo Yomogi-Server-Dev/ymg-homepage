@@ -8,7 +8,7 @@ export interface CarouselImage {
 
 export interface MediaItem {
   id: string;
-  type: 'image' | 'video' | 'youtube';
+  type: "image" | "video" | "youtube";
   src: string;
   alt?: string;
   title?: string;

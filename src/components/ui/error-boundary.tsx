@@ -51,7 +51,9 @@ export class ErrorBoundary extends Component<Props, State> {
                 ページを再読み込み
               </Button>
               <Button
-                onClick={() => this.setState({ hasError: false, error: undefined })}
+                onClick={() =>
+                  this.setState({ hasError: false, error: undefined })
+                }
                 variant="outline"
               >
                 再試行

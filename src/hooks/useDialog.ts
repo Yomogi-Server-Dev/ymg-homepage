@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useCallback, useState } from "react";
 
 interface UseDialogProps<T> {
   initialItem?: T | null;
@@ -18,13 +18,16 @@ export function useDialog<T>({ initialItem = null }: UseDialogProps<T> = {}) {
     setIsOpen(false);
   }, []);
 
-  const toggleDialog = useCallback((item?: T) => {
-    if (isOpen) {
-      closeDialog();
-    } else if (item) {
-      openDialog(item);
-    }
-  }, [isOpen, openDialog, closeDialog]);
+  const toggleDialog = useCallback(
+    (item?: T) => {
+      if (isOpen) {
+        closeDialog();
+      } else if (item) {
+        openDialog(item);
+      }
+    },
+    [isOpen, openDialog, closeDialog],
+  );
 
   return {
     selectedItem,

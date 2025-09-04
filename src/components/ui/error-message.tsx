@@ -10,16 +10,18 @@ interface ErrorMessageProps {
   variant?: "default" | "minimal";
 }
 
-export function ErrorMessage({ 
+export function ErrorMessage({
   title = "エラーが発生しました",
   message,
   onRetry,
   className,
-  variant = "default"
+  variant = "default",
 }: ErrorMessageProps) {
   if (variant === "minimal") {
     return (
-      <div className={cn("flex items-center space-x-2 text-red-600", className)}>
+      <div
+        className={cn("flex items-center space-x-2 text-red-600", className)}
+      >
         <AlertCircle className="w-4 h-4" />
         <span className="text-sm">{message}</span>
         {onRetry && (
@@ -35,7 +37,12 @@ export function ErrorMessage({
   }
 
   return (
-    <div className={cn("rounded-lg border border-red-200 bg-red-50 p-4", className)}>
+    <div
+      className={cn(
+        "rounded-lg border border-red-200 bg-red-50 p-4",
+        className,
+      )}
+    >
       <div className="flex items-start space-x-3">
         <AlertCircle className="w-5 h-5 text-red-600 mt-0.5" />
         <div className="flex-1">

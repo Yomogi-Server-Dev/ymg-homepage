@@ -12,11 +12,14 @@ export function CarFeature() {
         <Car className="w-8 h-8 text-primary" />
         車も乗れます！
       </h2>
-      
+
       {/* 画像ブロック群 */}
       <div className="grid md:grid-cols-2 gap-8 mb-12">
         {carFeatureImages.map((image) => (
-          <div key={image.id} className="rounded-lg overflow-hidden shadow-lg bg-gray-100 h-64 relative">
+          <div
+            key={image.id}
+            className="rounded-lg overflow-hidden shadow-lg bg-gray-100 h-64 relative"
+          >
             <Image
               src={image.src}
               alt={image.alt || "車の機能"}

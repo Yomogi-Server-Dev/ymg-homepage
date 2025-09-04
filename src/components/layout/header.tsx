@@ -1,8 +1,9 @@
 "use client";
 
-import { Menu, MessageCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Navigation } from "./navigation";
 
 export function Header() {
   return (
@@ -18,15 +19,13 @@ export function Header() {
             variant="outline"
             className="flex items-center gap-2"
             onClick={() =>
-              window.open("https://discord.gg/yourserver", "_blank")
+              window.open("https://discord.gg/qkjfv5YGvY", "_blank")
             }
           >
             <MessageCircle className="w-4 h-4" />
             Discordはこちら
           </Button>
-          <Button variant="ghost" size="icon">
-            <Menu className="w-5 h-5" />
-          </Button>
+          <Navigation />
         </nav>
       </div>
     </header>
