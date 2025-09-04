@@ -1,5 +1,5 @@
 import type { Event } from '@/types';
-import { Calendar, Clock, Star, Trophy } from 'lucide-react';
+import { Trophy } from 'lucide-react';
 
 export const events: Event[] = [
   {

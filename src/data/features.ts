@@ -16,20 +16,26 @@ export const features: Feature[] = [
   },
   {
     id: 2,
-    title: '仕事',
+    title: 'レベルシステム',
     icon: Briefcase,
-    description: ['様々な職業で稼ごう'],
-    detailTitle: '仕事システム',
+    description: [
+      '農業、採掘レベルを上げることが可能！',
+      'Ranking要素やレベルアップボーナスなどもあります！',
+    ],
+    detailTitle: 'レベルシステム',
     imageUrl: '/pictures/index/top/expo1.png',
     status: 'active',
   },
   {
     id: 3,
-    title: 'ミニゲーム',
+    title: 'アスレチック',
     icon: Gamepad2,
-    description: ['楽しいゲームが盛りだくさん'],
-    detailTitle: 'ミニゲーム',
+    description: [
+      '10種類を超える多種多様なアスレチック',
+      'クリアすると称号がもらえるぞ！',
+    ],
+    detailTitle: 'アスレチック',
     imageUrl: '/pictures/index/top/expo2.png',
-    status: 'active',
+    status: 'upcoming',
   },
 ];
