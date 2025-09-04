@@ -11,11 +11,11 @@ export const admins: Admin[] = [
   },
   {
     id: 2,
-    name: 'Sagaと申す',
+    name: 'SAGAと申す',
     gamerTag: 'byakko9',
     role: 'Admin',
     avatar: '/pictures/index/admin/saga.jpg',
-    description: 'Discord管理者',
+    description: 'Discord管理者 浅く広くやってます。建築愛してます。',
   },
   {
     id: 3,
