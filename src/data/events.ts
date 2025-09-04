@@ -1,14 +1,5 @@
-import { Calendar, Clock, type LucideIcon, Star, Trophy } from "lucide-react";
-
-export type Event = {
-  id: number;
-  title: string;
-  icon: LucideIcon;
-  status: "active" | "upcoming";
-  schedule: string;
-  description: string;
-  detailContent: string;
-};
+import { Calendar, Clock, Star, Trophy } from "lucide-react";
+import type { Event } from "@/types";
 
 export const events: Event[] = [
   {

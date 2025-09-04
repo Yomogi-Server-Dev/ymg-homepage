@@ -1,12 +1,4 @@
-export type AdminRole = "Owner" | "Admin" | "Moderator" | "Builder";
-
-export type Admin = {
-  id: number;
-  name: string;
-  role: AdminRole;
-  avatar: string;
-  description: string;
-};
+import type { Admin, AdminRole } from "@/types";
 
 export const admins: Admin[] = [
   {

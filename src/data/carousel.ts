@@ -1,8 +1,4 @@
-export interface CarouselImage {
-  id: string;
-  src: string;
-  alt: string;
-}
+import type { CarouselImage } from "@/types";
 
 export const carouselImages: CarouselImage[] = [
   {

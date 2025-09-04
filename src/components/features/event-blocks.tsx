@@ -10,7 +10,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import type { Event } from "@/data/events";
+import type { Event } from "@/types";
 import { events } from "@/data/events";
 
 export function EventBlocks() {

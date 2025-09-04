@@ -2,18 +2,9 @@ import {
   Briefcase,
   Gamepad2,
   Home,
-  type LucideIcon,
   Users,
 } from "lucide-react";
-
-export type Feature = {
-  id: number;
-  title: string;
-  icon: LucideIcon;
-  description: string;
-  detailTitle: string;
-  detailContent: string;
-};
+import type { Feature } from "@/types";
 
 export const features: Feature[] = [
   {

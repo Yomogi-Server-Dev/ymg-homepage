@@ -9,7 +9,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import type { Feature } from "@/data/features";
+import type { Feature } from "@/types";
 import { features } from "@/data/features";
 
 export function FeatureBlocks() {

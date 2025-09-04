@@ -1,10 +1,4 @@
-export interface MediaItem {
-  id: string;
-  type: 'image' | 'video';
-  src: string;
-  alt?: string;
-  title?: string;
-}
+import type { MediaItem } from "@/types";
 
 export const carFeatureMedia: MediaItem[] = [
   {
