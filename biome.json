@@ -1,40 +1,35 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
   "vcs": {
-    "enabled": true,
+    "enabled": false,
     "clientKind": "git",
-    "useIgnoreFile": true
+    "useIgnoreFile": false
   },
   "files": {
-    "ignoreUnknown": true,
-    "includes": ["**", "!node_modules", "!.next", "!dist", "!build"]
+    "ignore": [
+      "node_modules",
+      "tsconfig.*.json",
+      "src/sm2/js/lowLag.js",
+      "src/sm2/swf/soundmanager2-nodebug-jsmin.js"
+    ]
   },
   "formatter": {
     "enabled": true,
-    "indentStyle": "space",
-    "indentWidth": 2
+    "lineWidth": 80,
+    "indentStyle": "space"
+  },
+  "organizeImports": {
+    "enabled": true
   },
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true,
-      "suspicious": {
-        "noUnknownAtRules": "off"
-      },
-      "a11y": {
-        "useSemanticElements": "warn"
-      }
-    },
-    "domains": {
-      "next": "recommended",
-      "react": "recommended"
+      "recommended": true
     }
   },
-  "assist": {
-    "actions": {
-      "source": {
-        "organizeImports": "on"
-      }
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "double"
     }
   }
 }
