@@ -2,6 +2,7 @@
 
 import { Car } from "lucide-react";
 import Image from "next/image";
+import { carFeatureMedia } from "@/data/media";
 
 export function CarFeature() {
   return (
@@ -11,26 +12,29 @@ export function CarFeature() {
         車も乗れます！
       </h2>
       <div className="grid md:grid-cols-2 gap-8">
-        <div className="rounded-lg overflow-hidden shadow-lg bg-gray-100 h-64 relative">
-          <Image
-            src="/pictures/index/でかい表示.png"
-            alt="車の機能"
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="rounded-lg overflow-hidden shadow-lg bg-gray-100 h-64 relative">
-          <video
-            src="/pictures/index/movie.mp4"
-            controls
-            className="w-full h-full object-cover"
-            autoPlay
-            muted
-            loop
-          >
-            お使いのブラウザは動画をサポートしていません。
-          </video>
-        </div>
+        {carFeatureMedia.map((media) => (
+          <div key={media.id} className="rounded-lg overflow-hidden shadow-lg bg-gray-100 h-64 relative">
+            {media.type === "image" ? (
+              <Image
+                src={media.src}
+                alt={media.alt || "車の機能"}
+                fill
+                className="object-cover"
+              />
+            ) : (
+              <video
+                src={media.src}
+                controls
+                className="w-full h-full object-cover"
+                autoPlay
+                muted
+                loop
+              >
+                お使いのブラウザは動画をサポートしていません。
+              </video>
+            )}
+          </div>
+        ))}
       </div>
     </section>
   );

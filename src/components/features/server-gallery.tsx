@@ -2,6 +2,7 @@
 
 import { Camera } from "lucide-react";
 import Image from "next/image";
+import { serverGalleryMedia } from "@/data/media";
 
 export function ServerGallery() {
   return (
@@ -11,42 +12,29 @@ export function ServerGallery() {
         サーバーの様子
       </h2>
       <div className="grid md:grid-cols-2 gap-8">
-        <div className="rounded-lg overflow-hidden shadow-lg bg-gray-100 h-64 relative">
-          <Image
-            src="/pictures/index/でかい表示.png"
-            alt="サーバーの様子1"
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="rounded-lg overflow-hidden shadow-lg bg-gray-100 h-64 relative">
-          <Image
-            src="/pictures/index/でかい表示.png"
-            alt="サーバーの様子2"
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="rounded-lg overflow-hidden shadow-lg bg-gray-100 h-64 relative">
-          <Image
-            src="/pictures/index/でかい表示.png"
-            alt="サーバーの様子3"
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="rounded-lg overflow-hidden shadow-lg bg-gray-100 h-64 relative">
-          <video
-            src="/pictures/index/movie.mp4"
-            controls
-            className="w-full h-full object-cover"
-            autoPlay
-            muted
-            loop
-          >
-            お使いのブラウザは動画をサポートしていません。
-          </video>
-        </div>
+        {serverGalleryMedia.map((media) => (
+          <div key={media.id} className="rounded-lg overflow-hidden shadow-lg bg-gray-100 h-64 relative">
+            {media.type === "image" ? (
+              <Image
+                src={media.src}
+                alt={media.alt || "サーバーの様子"}
+                fill
+                className="object-cover"
+              />
+            ) : (
+              <video
+                src={media.src}
+                controls
+                className="w-full h-full object-cover"
+                autoPlay
+                muted
+                loop
+              >
+                お使いのブラウザは動画をサポートしていません。
+              </video>
+            )}
+          </div>
+        ))}
       </div>
     </section>
   );

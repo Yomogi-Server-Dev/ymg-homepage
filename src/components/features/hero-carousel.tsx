@@ -4,42 +4,20 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-
-const images = [
-  {
-    id: "top1",
-    src: "/pictures/index/top/top-1.png",
-    alt: "Yomogi Server - 風景1",
-  },
-  {
-    id: "top2",
-    src: "/pictures/index/top/top-2.png",
-    alt: "Yomogi Server - 風景2",
-  },
-  {
-    id: "top3",
-    src: "/pictures/index/top/top-3.png",
-    alt: "Yomogi Server - 風景3",
-  },
-  {
-    id: "top4",
-    src: "/pictures/index/top/top-4.png",
-    alt: "Yomogi Server - 風景4",
-  },
-];
+import { carouselImages } from "@/data/carousel";
 
 export function HeroCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToPrevious = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1,
+      prevIndex === 0 ? carouselImages.length - 1 : prevIndex - 1,
     );
   };
 
   const goToNext = useCallback(() => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1,
+      prevIndex === carouselImages.length - 1 ? 0 : prevIndex + 1,
     );
   }, []);
 
@@ -55,7 +33,7 @@ export function HeroCarousel() {
     <div className="relative w-full h-[500px] overflow-hidden bg-gray-100">
       {/* 画像表示 */}
       <div className="relative w-full h-full">
-        {images.map((image, index) => (
+        {carouselImages.map((image, index) => (
           <div
             key={image.id}
             className={`absolute inset-0 transition-transform duration-500 ease-in-out ${
@@ -124,7 +102,7 @@ export function HeroCarousel() {
 
       {/* インジケーター */}
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-        {images.map((image, index) => (
+        {carouselImages.map((image, index) => (
           <button
             key={image.id}
             type="button"
