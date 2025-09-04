@@ -28,6 +28,8 @@ export function HeroCarousel() {
         className="relative w-full h-[500px] overflow-hidden bg-gray-100"
         onMouseEnter={config.pauseOnHover ? pause : undefined}
         onMouseLeave={config.pauseOnHover ? play : undefined}
+        role="region"
+        aria-label="Image carousel"
       >
         {/* 画像表示 */}
         <div className="relative w-full h-full">

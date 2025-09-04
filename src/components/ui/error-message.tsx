@@ -26,6 +26,7 @@ export function ErrorMessage({
         <span className="text-sm">{message}</span>
         {onRetry && (
           <button
+            type="button"
             onClick={onRetry}
             className="text-blue-600 hover:text-blue-800 text-sm underline"
           >

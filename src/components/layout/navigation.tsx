@@ -1,7 +1,7 @@
 "use client";
 
+import { Calendar, Home, Image, Info, Menu, Server, Users } from "lucide-react";
 import { useState } from "react";
-import { Menu, Home, Info, Calendar, Users, Image, Server } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -73,6 +73,7 @@ export function Navigation() {
               return (
                 <li key={item.id}>
                   <button
+                    type="button"
                     onClick={() => handleNavClick(item.href)}
                     className="w-full flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 transition-colors text-left"
                   >

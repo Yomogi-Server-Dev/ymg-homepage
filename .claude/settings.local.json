@@ -48,7 +48,9 @@
       "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\components\\layout/**)",
       "Bash(npm run dev:*)",
       "Bash(del \"C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\app\\globals.css\")",
-      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\app/**)"
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\app/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\components\\ui/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\components\\ui/**)"
     ],
     "deny": [],
     "ask": []
