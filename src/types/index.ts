@@ -32,17 +32,30 @@ export interface Event {
     icon: LucideIcon;
     status: 'active' | 'upcoming';
     schedule: string;
-    description: string;
-    detailContent: string;
+    description: string[];
+    detailTitle: string;
+    imageUrl: string;
 }
 
 export interface Feature {
     id: number;
     title: string;
-    description: string;
+    description: string[];
     detailTitle: string;
     imageUrl: string;
     icon: LucideIcon;
+    status?: 'active' | 'upcoming';
+}
+
+export interface ContentItem {
+    id: number;
+    title: string;
+    description: string[];
+    detailTitle: string;
+    imageUrl: string;
+    icon: LucideIcon;
+    status?: 'active' | 'upcoming';
+    schedule?: string;
 }
 
 export interface CarouselConfig {
