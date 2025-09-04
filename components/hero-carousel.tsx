@@ -2,14 +2,14 @@
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 
 const images = [
-  { src: "/img.png", alt: "Yomogi Server メイン" },
-  { src: "/img.png", alt: "Yomogi Server 風景1" },
-  { src: "/img.png", alt: "Yomogi Server 風景2" },
-  { src: "/img.png", alt: "Yomogi Server 風景3" },
+  { id: "top1", src: "/pictures/index/top/top-1.png", alt: "Yomogi Server - 風景1" },
+  { id: "top2", src: "/pictures/index/top/top-2.png", alt: "Yomogi Server - 風景2" },
+  { id: "top3", src: "/pictures/index/top/top-3.png", alt: "Yomogi Server - 風景3" },
+  { id: "top4", src: "/pictures/index/top/top-4.png", alt: "Yomogi Server - 風景4" },
 ];
 
 export function HeroCarousel() {
@@ -21,11 +21,11 @@ export function HeroCarousel() {
     );
   };
 
-  const goToNext = () => {
+  const goToNext = useCallback(() => {
     setCurrentIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1,
     );
-  };
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -33,7 +33,7 @@ export function HeroCarousel() {
     }, 5000); // 5秒ごとに自動スライド
 
     return () => clearInterval(interval);
-  }, [currentIndex]);
+  }, [goToNext]);
 
   return (
     <div className="relative w-full h-[500px] overflow-hidden bg-gray-100">
@@ -41,7 +41,7 @@ export function HeroCarousel() {
       <div className="relative w-full h-full">
         {images.map((image, index) => (
           <div
-            key={index}
+            key={image.id}
             className={`absolute inset-0 transition-transform duration-500 ease-in-out ${
               index === currentIndex
                 ? "translate-x-0"
@@ -108,9 +108,10 @@ export function HeroCarousel() {
 
       {/* インジケーター */}
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-        {images.map((_, index) => (
+        {images.map((image, index) => (
           <button
-            key={index}
+            key={image.id}
+            type="button"
             onClick={() => setCurrentIndex(index)}
             className={`w-2 h-2 rounded-full transition-all ${
               index === currentIndex

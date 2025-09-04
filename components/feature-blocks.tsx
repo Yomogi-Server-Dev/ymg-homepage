@@ -106,7 +106,7 @@ export function FeatureBlocks() {
         open={!!selectedFeature}
         onOpenChange={() => setSelectedFeature(null)}
       >
-        <DialogContent className="max-w-2xl">
+        <DialogContent className="max-w-2xl" forceMount>
           {selectedFeature && (
             <>
               <DialogHeader>

@@ -121,7 +121,7 @@ export function EventBlocks() {
         open={!!selectedEvent}
         onOpenChange={() => setSelectedEvent(null)}
       >
-        <DialogContent className="max-w-2xl">
+        <DialogContent className="max-w-2xl" forceMount>
           {selectedEvent && (
             <>
               <DialogHeader>

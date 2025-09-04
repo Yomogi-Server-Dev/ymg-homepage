@@ -1,39 +1,22 @@
-import { Camera, Car, Menu, MessageCircle } from "lucide-react";
+"use client";
+
+import { Camera, Car } from "lucide-react";
 import Image from "next/image";
 import { AdminList } from "@/components/admin-list";
 import { EventBlocks } from "@/components/event-blocks";
 import { FeatureBlocks } from "@/components/feature-blocks";
 import { HeroCarousel } from "@/components/hero-carousel";
 import { ServerStatus } from "@/components/server-status";
-import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-white">
-      {/* ヘッダー */}
-      <header className="border-b sticky top-0 bg-white/95 backdrop-blur-sm z-50">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-primary">Yomogi Server</h1>
-          <nav className="flex items-center gap-4">
-            <Button
-              variant="outline"
-              className="flex items-center gap-2"
-              onClick={() =>
-                window.open("https://discord.gg/yourserver", "_blank")
-              }
-            >
-              <MessageCircle className="w-4 h-4" />
-              Discordはこちら
-            </Button>
-            <Button variant="ghost" size="icon">
-              <Menu className="w-5 h-5" />
-            </Button>
-          </nav>
-        </div>
-      </header>
+    <div className="min-h-screen bg-white flex flex-col">
+      <Header />
 
-      <main>
+      <main className="flex-grow">
         {/* ヒーローセクション - 画像カルーセル */}
         <section className="relative">
           <HeroCarousel />
@@ -136,66 +119,7 @@ export default function HomePage() {
         </section>
       </main>
 
-      {/* フッター */}
-      <footer className="bg-gray-900 text-white py-8 mt-16">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="font-bold text-lg mb-4 text-primary">
-                Yomogi Server
-              </h3>
-              <p className="text-gray-400">
-                MCBE サバイバルサーバー
-                <br />
-                ymg24.org:19132
-              </p>
-            </div>
-            <div>
-              <h3 className="font-bold text-lg mb-4">リンク</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li>
-                  <a href="#" className="hover:text-primary transition-colors">
-                    利用規約
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-primary transition-colors">
-                    プライバシーポリシー
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-primary transition-colors">
-                    お問い合わせ
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-bold text-lg mb-4">コミュニティ</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li>
-                  <a href="#" className="hover:text-primary transition-colors">
-                    Discord
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-primary transition-colors">
-                    Twitter
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-primary transition-colors">
-                    YouTube
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
-            <p>&copy; 2024 Yomogi Server. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

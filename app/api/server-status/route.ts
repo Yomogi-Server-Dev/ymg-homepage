@@ -1,56 +1,79 @@
 import { NextResponse } from "next/server";
 
-// 実際のMinecraftサーバーと連携する場合は、
-// minecraft-server-util などのライブラリを使用してください
-// npm install minecraft-server-util
+// mcstatus.io APIの型定義
+interface MCStatusResponse {
+  online: boolean;
+  host: string;
+  port: number;
+  ip_address: string;
+  version?: {
+    name: string;
+    protocol: number;
+  };
+  players?: {
+    online: number;
+    max: number;
+    list?: Array<{
+      name_clean: string;
+    }>;
+  };
+  motd?: {
+    clean: string;
+    html: string;
+  };
+  gamemode?: string;
+  software?: string;
+}
 
 export async function GET() {
   try {
-    // デモデータ（実際の実装では、Minecraftサーバーにクエリを送信）
-    const serverData = {
-      online: true,
-      players: Math.floor(Math.random() * 30) + 5, // 5〜35人のランダム
-      maxPlayers: 50,
-      version: "PMMP v5",
-      motd: "Welcome to Yomogi Server!",
-      latency: Math.floor(Math.random() * 50) + 10, // 10〜60msのランダム
-    };
+    // mcstatus.io APIを使用してサーバー状態を取得
+    const response = await fetch(
+      "https://api.mcstatus.io/v2/status/bedrock/ymg24.org",
+      {
+        method: "GET",
+        headers: {
+          "Accept": "application/json",
+        },
+        // キャッシュを60秒に設定
+        next: { revalidate: 60 },
+      }
+    );
 
-    // 実際の実装例（コメントアウト）:
-    /*
-    import { status } from 'minecraft-server-util'
-    
-    try {
-      const result = await status('ymg24.org', 19132, {
-        enableSRV: true,
-        timeout: 5000
-      })
-      
-      serverData = {
-        online: true,
-        players: result.players.online,
-        maxPlayers: result.players.max,
-        version: result.version.name,
-        motd: result.motd.clean,
-        latency: result.roundTripLatency
-      }
-    } catch (error) {
-      serverData = {
-        online: false,
-        players: 0,
-        maxPlayers: 50,
-        version: 'PMMP v5',
-        motd: 'Server offline',
-        latency: 0
-      }
+    if (!response.ok) {
+      throw new Error(`API responded with status: ${response.status}`);
     }
-    */
+
+    const data: MCStatusResponse = await response.json();
+
+    // クライアント用のデータ形式に変換
+    const serverData = {
+      online: data.online || false,
+      players: data.players?.online || 0,
+      maxPlayers: data.players?.max || 50,
+      version: data.version?.name || "Unknown",
+      motd: data.motd?.clean || "よもぎサーバー",
+      latency: 0, // mcstatus.io APIではレイテンシは提供されない
+      playersList: data.players?.list?.map(player => player.name_clean) || [],
+      software: data.software || "PocketMine-MP",
+      gamemode: data.gamemode || "Survival",
+    };
 
     return NextResponse.json(serverData);
   } catch (error) {
-    return NextResponse.json(
-      { error: "Failed to fetch server status" },
-      { status: 500 },
-    );
+    console.error("Failed to fetch server status:", error);
+    
+    // エラー時のフォールバックデータ
+    return NextResponse.json({
+      online: false,
+      players: 0,
+      maxPlayers: 50,
+      version: "v1.21.100",
+      motd: "[生活鯖]よもぎサーバー",
+      latency: 0,
+      playersList: [],
+      software: "PocketMine-MP",
+      gamemode: "Survival",
+    });
   }
 }
