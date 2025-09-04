@@ -6,8 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "format": "biome format --write",
-    "lint": "biome lint"
+    "format": "biome format --write && biome check --apply",
+    "lint": "biome lint",
+    "fix": "biome check --apply"
   },
   "dependencies": {
     "@radix-ui/react-aspect-ratio": "^1.1.7",
