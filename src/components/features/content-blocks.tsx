@@ -51,8 +51,8 @@ export function ContentBlocks({
                   </Badge>
                 )}
                 <div className='text-gray-600 text-sm space-y-1'>
-                  {item.description.map((line, index) => (
-                    <p key={index}>{line}</p>
+                  {item.description.map((line) => (
+                    <p key={line}>{line}</p>
                   ))}
                 </div>
               </div>

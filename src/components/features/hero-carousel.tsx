@@ -24,11 +24,10 @@ export function HeroCarousel() {
 
   return (
     <ErrorBoundary>
-      <div
+      <section
         className='relative w-full h-[500px] overflow-hidden bg-gray-100'
         onMouseEnter={config.pauseOnHover ? pause : undefined}
         onMouseLeave={config.pauseOnHover ? play : undefined}
-        role='region'
         aria-label='Image carousel'
       >
         <div className='relative w-full h-full'>
@@ -130,7 +129,7 @@ export function HeroCarousel() {
             ))}
           </div>
         )}
-      </div>
+      </section>
     </ErrorBoundary>
   );
 }
