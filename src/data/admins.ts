@@ -3,7 +3,7 @@ import type { Admin, AdminRole } from '@/types';
 export const admins: Admin[] = [
     {
         id: 1,
-        name: 'Matsuyuki1231',
+        name: 'Matsuyuki',
         gamerTag: 'matsuyuki1231',
         role: 'Admin',
         avatar: '/pictures/index/admin/matsuyuki.jpg',
@@ -19,7 +19,7 @@ export const admins: Admin[] = [
     },
     {
         id: 3,
-        name: 'mydeacy',
+        name: 'MyDeacy',
         gamerTag: 'mydeacy',
         role: 'Admin',
         avatar: '',
@@ -35,7 +35,7 @@ export const admins: Admin[] = [
     },
     {
         id: 5,
-        name: 'kogumapotato',
+        name: 'こぐま',
         gamerTag: 'kogumapotato',
         role: 'Admin',
         avatar: '',
@@ -43,7 +43,7 @@ export const admins: Admin[] = [
     },
     {
         id: 6,
-        name: 'koruma0317',
+        name: 'こるま',
         gamerTag: 'koruma0317',
         role: 'Admin',
         avatar: '',
@@ -59,7 +59,7 @@ export const admins: Admin[] = [
     },
     {
         id: 8,
-        name: 'terracat2020',
+        name: 'ちきうネコ',
         gamerTag: 'terracat2020',
         role: 'Builder',
         avatar: '',
@@ -67,7 +67,7 @@ export const admins: Admin[] = [
     },
     {
         id: 9,
-        name: 'nassan2727',
+        name: 'なっさん',
         gamerTag: 'nassan2727',
         role: 'Builder',
         avatar: '',
@@ -75,7 +75,7 @@ export const admins: Admin[] = [
     },
     {
         id: 10,
-        name: 'makonbu714',
+        name: 'Makonbu',
         gamerTag: 'makonbu714',
         role: 'Builder',
         avatar: '',
