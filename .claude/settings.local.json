@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\components/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\app/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server/**)",
+      "WebSearch",
+      "WebSearch",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\app/**)",
+      "Bash(robocopy:*)",
+      "Bash(xcopy:*)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\components/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\app/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\app/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\components\\layout/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\components\\features/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\components\\features/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\components\\features/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\components\\features/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\components\\ui/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\components\\features/**)",
+      "Bash(npm run build:*)",
+      "Bash(npm run lint)",
+      "Bash(npm run lint:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -33,11 +33,11 @@ export async function GET() {
       {
         method: "GET",
         headers: {
-          "Accept": "application/json",
+          Accept: "application/json",
         },
         // キャッシュを60秒に設定
         next: { revalidate: 60 },
-      }
+      },
     );
 
     if (!response.ok) {
@@ -54,7 +54,7 @@ export async function GET() {
       version: data.version?.name || "Unknown",
       motd: data.motd?.clean || "よもぎサーバー",
       latency: 0, // mcstatus.io APIではレイテンシは提供されない
-      playersList: data.players?.list?.map(player => player.name_clean) || [],
+      playersList: data.players?.list?.map((player) => player.name_clean) || [],
       software: data.software || "PocketMine-MP",
       gamemode: data.gamemode || "Survival",
     };
@@ -62,7 +62,7 @@ export async function GET() {
     return NextResponse.json(serverData);
   } catch (error) {
     console.error("Failed to fetch server status:", error);
-    
+
     // エラー時のフォールバックデータ
     return NextResponse.json({
       online: false,

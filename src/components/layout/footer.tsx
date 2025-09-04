@@ -21,17 +21,26 @@ export function Footer() {
             <h3 className="font-bold text-lg mb-4">リンク</h3>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <Link href="/terms" className="hover:text-primary transition-colors">
+                <Link
+                  href="/terms"
+                  className="hover:text-primary transition-colors"
+                >
                   利用規約
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="hover:text-primary transition-colors">
+                <Link
+                  href="/privacy"
+                  className="hover:text-primary transition-colors"
+                >
                   プライバシーポリシー
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-primary transition-colors">
+                <Link
+                  href="/contact"
+                  className="hover:text-primary transition-colors"
+                >
                   お問い合わせ
                 </Link>
               </li>
@@ -41,8 +50,8 @@ export function Footer() {
             <h3 className="font-bold text-lg mb-4">コミュニティ</h3>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <a 
-                  href="https://discord.gg/yourserver" 
+                <a
+                  href="https://discord.gg/yourserver"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-primary transition-colors"
@@ -51,8 +60,8 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a 
-                  href="https://twitter.com/yomogi_server" 
+                <a
+                  href="https://twitter.com/yomogi_server"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-primary transition-colors"
@@ -61,8 +70,8 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a 
-                  href="https://youtube.com/@yomogi_server" 
+                <a
+                  href="https://youtube.com/@yomogi_server"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-primary transition-colors"
@@ -74,7 +83,10 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Yomogi Server. All rights reserved.</p>
+          <p>
+            &copy; {new Date().getFullYear()} Yomogi Server. All rights
+            reserved.
+          </p>
         </div>
       </div>
     </footer>

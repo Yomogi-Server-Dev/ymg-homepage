@@ -2,14 +2,14 @@
 
 import { Camera, Car } from "lucide-react";
 import Image from "next/image";
-import { AdminList } from "@/components/admin-list";
-import { EventBlocks } from "@/components/event-blocks";
-import { FeatureBlocks } from "@/components/feature-blocks";
-import { HeroCarousel } from "@/components/hero-carousel";
-import { ServerStatus } from "@/components/server-status";
+import { AdminList } from "@/components/features/admin-list";
+import { EventBlocks } from "@/components/features/event-blocks";
+import { FeatureBlocks } from "@/components/features/feature-blocks";
+import { HeroCarousel } from "@/components/features/hero-carousel";
+import { ServerStatus } from "@/components/features/server-status";
+import { Footer } from "@/components/layout/footer";
+import { Header } from "@/components/layout/header";
 import { Separator } from "@/components/ui/separator";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
 
 export default function HomePage() {
   return (
