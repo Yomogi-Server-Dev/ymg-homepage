@@ -8,6 +8,12 @@
   "files": {
     "ignore": [
       "node_modules",
+      ".next",
+      ".turbo",
+      "out",
+      "dist",
+      "build",
+      "coverage",
       "tsconfig.*.json",
       "src/sm2/js/lowLag.js",
       "src/sm2/swf/soundmanager2-nodebug-jsmin.js"
