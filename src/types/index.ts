@@ -8,10 +8,11 @@ export interface CarouselImage {
 
 export interface MediaItem {
   id: string;
-  type: 'image' | 'video';
+  type: 'image' | 'video' | 'youtube';
   src: string;
   alt?: string;
   title?: string;
+  youtubeId?: string;
 }
 
 export type AdminRole = "Owner" | "Admin" | "Moderator" | "Builder";

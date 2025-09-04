@@ -30,7 +30,11 @@
       "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\components\\features/**)",
       "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\components\\features/**)",
       "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\components\\features/**)",
-      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\components\\features/**)"
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\components\\features/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\data/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\components\\features/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\components\\features/**)",
+      "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\types/**)"
     ],
     "deny": [],
     "ask": []

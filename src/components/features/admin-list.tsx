@@ -7,20 +7,24 @@ import { admins, roleColors } from "@/data/admins";
 
 export function AdminList() {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+    <div className="grid grid-cols-2 gap-6">
       {admins.map((admin) => (
         <Card
           key={admin.id}
-          className="p-4 text-center hover:shadow-lg transition-shadow"
+          className="p-4 hover:shadow-lg transition-shadow"
         >
-          <div className="w-20 h-20 mx-auto mb-3 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
-            <User className="w-10 h-10 text-gray-500" />
+          <div className="flex items-center gap-3 mb-2 py-4">
+            <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center flex-shrink-0">
+              <User className="w-5 h-5 text-gray-500" />
+            </div>
+            <div className="flex items-center gap-2 min-w-0">
+              <h3 className="font-bold text-base truncate">{admin.name}</h3>
+              <Badge className={`${roleColors[admin.role]} text-white text-xs flex-shrink-0`}>
+                {admin.role}
+              </Badge>
+            </div>
           </div>
-          <h3 className="font-bold text-lg mb-1">{admin.name}</h3>
-          <Badge className={`${roleColors[admin.role]} text-white mb-2`}>
-            {admin.role}
-          </Badge>
-          <p className="text-sm text-gray-600">{admin.description}</p>
+          <p className="text-sm text-gray-600 leading-relaxed">{admin.description}</p>
         </Card>
       ))}
     </div>

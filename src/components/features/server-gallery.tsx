@@ -2,7 +2,8 @@
 
 import { Camera } from "lucide-react";
 import Image from "next/image";
-import { serverGalleryMedia } from "@/data/media";
+import { YouTubeEmbed } from "@/components/ui/youtube-embed";
+import { serverGalleryImages, serverGalleryVideo } from "@/data/media";
 
 export function ServerGallery() {
   return (
@@ -11,31 +12,30 @@ export function ServerGallery() {
         <Camera className="w-8 h-8 text-primary" />
         サーバーの様子
       </h2>
-      <div className="grid md:grid-cols-2 gap-8">
-        {serverGalleryMedia.map((media) => (
-          <div key={media.id} className="rounded-lg overflow-hidden shadow-lg bg-gray-100 h-64 relative">
-            {media.type === "image" ? (
-              <Image
-                src={media.src}
-                alt={media.alt || "サーバーの様子"}
-                fill
-                className="object-cover"
-              />
-            ) : (
-              <video
-                src={media.src}
-                controls
-                className="w-full h-full object-cover"
-                autoPlay
-                muted
-                loop
-              >
-                お使いのブラウザは動画をサポートしていません。
-              </video>
-            )}
+      
+      {/* 画像ブロック群 */}
+      <div className="grid md:grid-cols-2 gap-8 mb-12">
+        {serverGalleryImages.map((image) => (
+          <div key={image.id} className="rounded-lg overflow-hidden shadow-lg bg-gray-100 h-64 relative">
+            <Image
+              src={image.src}
+              alt={image.alt || "サーバーの様子"}
+              fill
+              className="object-cover"
+            />
           </div>
         ))}
       </div>
+
+      {/* YouTube動画 */}
+      {serverGalleryVideo.youtubeId && (
+        <div className="max-w-4xl mx-auto">
+          <YouTubeEmbed
+            videoId={serverGalleryVideo.youtubeId}
+            title={serverGalleryVideo.title}
+          />
+        </div>
+      )}
     </section>
   );
 }

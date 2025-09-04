@@ -1,21 +1,29 @@
 import type { MediaItem } from "@/types";
 
-export const carFeatureMedia: MediaItem[] = [
+export const carFeatureImages: MediaItem[] = [
   {
-    id: "car-image",
+    id: "car-image-1",
     type: "image",
     src: "/pictures/index/でかい表示.png",
-    alt: "車の機能",
+    alt: "車の機能1",
   },
   {
-    id: "car-video",
-    type: "video",
-    src: "/pictures/index/movie.mp4",
-    title: "車の機能動画",
+    id: "car-image-2",
+    type: "image",
+    src: "/pictures/index/でかい表示.png",
+    alt: "車の機能2",
   },
 ];
 
-export const serverGalleryMedia: MediaItem[] = [
+export const carFeatureVideo: MediaItem = {
+  id: "car-youtube",
+  type: "youtube",
+  src: "",
+  youtubeId: "MRHCyJt8GU4", // プレースホルダー - 実際のYouTube動画IDに変更してください
+  title: "車の機能紹介動画",
+};
+
+export const serverGalleryImages: MediaItem[] = [
   {
     id: "server-1",
     type: "image",
@@ -35,9 +43,17 @@ export const serverGalleryMedia: MediaItem[] = [
     alt: "サーバーの様子3",
   },
   {
-    id: "server-video",
-    type: "video",
-    src: "/pictures/index/movie.mp4",
-    title: "サーバーの様子動画",
+    id: "server-4",
+    type: "image",
+    src: "/pictures/index/でかい表示.png",
+    alt: "サーバーの様子4",
   },
 ];
+
+export const serverGalleryVideo: MediaItem = {
+  id: "server-youtube",
+  type: "youtube",
+  src: "",
+  youtubeId: "6JiTUEuUrck", // プレースホルダー - 実際のYouTube動画IDに変更してください
+  title: "サーバーの様子紹介動画",
+};
