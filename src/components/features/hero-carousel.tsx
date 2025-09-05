@@ -25,7 +25,7 @@ export function HeroCarousel() {
   return (
     <ErrorBoundary>
       <section
-        className='relative w-full h-[500px] overflow-hidden bg-gray-100'
+        className='relative w-full h-[500px] lg:h-[600px] xl:h-[700px] overflow-hidden bg-gray-100'
         onMouseEnter={config.pauseOnHover ? pause : undefined}
         onMouseLeave={config.pauseOnHover ? play : undefined}
         aria-label='Image carousel'
