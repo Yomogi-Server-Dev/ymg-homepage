@@ -7,7 +7,7 @@ export const admins: Admin[] = [
         gamerTag: 'matsuyuki1231',
         role: 'Admin',
         avatar: '/pictures/index/admin/matsuyuki.png',
-        description: '管理者',
+        description: 'みんなのよもぎライフが素敵なものになるようがんばります\n',
     },
     {
         id: 2,
@@ -40,7 +40,7 @@ export const admins: Admin[] = [
         gamerTag: 'kogumapotato',
         role: 'Admin',
         avatar: '/pictures/index/admin/kogumapoteto.png',
-        description: '',
+        description: 'くまさんです。自由気ままに運営やってます。',
     },
     {
         id: 6,
@@ -55,8 +55,8 @@ export const admins: Admin[] = [
         name: 'airbass0941',
         gamerTag: 'airbass0941',
         role: 'Admin',
-        avatar: '',
-        description: '',
+        avatar: '/pictures/index/admin/bass.jpg',
+        description: '車作ったり、動画作ったりしてます。',
     },
     {
         id: 8,
