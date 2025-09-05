@@ -12,5 +12,5 @@ export const CAROUSEL_CONFIG: CarouselConfig = {
     autoPlayInterval: 5000,
     showArrows: true,
     showIndicators: true,
-    pauseOnHover: true,
+    pauseOnHover: false,
 };
