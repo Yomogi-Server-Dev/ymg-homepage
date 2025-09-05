@@ -26,7 +26,15 @@ export default function DonationPage() {
                                 <li>サーバーインフラの改善</li>
                             </ul>
                         </div>
-
+                        <div>
+                            <h3 className='font-semibold text-lg mb-2'>
+                                寄付特典(5000円以上)
+                            </h3>
+                            <ul className='list-disc list-inside space-y-1 ml-4'>
+                                <li>称号の[]色変更</li>
+                                <li>称号での§制限解除(太文字と斜文字が利用可能)</li>
+                            </ul>
+                        </div>
                         <div>
                             <h3 className='font-semibold text-lg mb-2'>
                                 注意事項
