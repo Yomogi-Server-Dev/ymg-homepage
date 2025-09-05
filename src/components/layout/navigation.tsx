@@ -18,6 +18,10 @@ interface NavItem {
     icon: React.ComponentType<{ className?: string }>;
 }
 
+interface NavigationProps {
+    isScrolled?: boolean;
+}
+
 const navItems: NavItem[] = [
     { id: 'home', label: 'ホーム', href: '#', icon: Home },
     { id: 'features', label: '特徴', href: '#features', icon: Info },
@@ -27,7 +31,7 @@ const navItems: NavItem[] = [
     { id: 'admins', label: '運営一覧', href: '#admins', icon: Users },
 ];
 
-export function Navigation() {
+export function Navigation({ isScrolled = false }: NavigationProps) {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleNavClick = (href: string) => {
@@ -55,7 +59,15 @@ export function Navigation() {
     return (
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-                <Button variant='ghost' size='lg' className='relative'>
+                <Button
+                    variant='ghost'
+                    size='lg'
+                    className={`relative transition-colors duration-300 ${
+                        isScrolled
+                            ? 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                            : 'text-white hover:text-gray-200 hover:bg-white/10'
+                    }`}
+                >
                     <Menu className='w-8 h-8' />
                     <span className='sr-only'>メニューを開く</span>
                 </Button>

@@ -13,18 +13,16 @@ import Image from 'next/image';
 export default function HomePage() {
     return (
         <main className='flex-grow'>
-            <section className='relative my-12 lg:max-w-6xl lg:mx-auto xl:max-w-7xl'>
-                <HeroCarousel />
-            </section>
+            <HeroCarousel />
 
             <div className='max-w-4xl mx-auto'>
-                <section className='px-4 py-16'>
+                <section className='px-4'>
                     <div className='text-center'>
-                        <h2 className='text-3xl font-bold mb-4 text-primary animate-slide-up'>
-                            Yomogi Serverへようこそ！
-                        </h2>
+                        <section id='status'>
+                            <ServerStatus />
+                        </section>
                         <p className='text-lg text-gray-600 max-w-2xl mx-auto animate-slide-up'>
-                            24時間365日いつでもログイン可能なMCBE版生活サーバーです！
+                            24時間365日いつでもログイン可能なMCBE版生活サーバーです！<br />
                             経済システムや豊富なコンテンツで、初心者から上級者まで楽しめます！詳細は下にスクロール！
                         </p>
                     </div>
@@ -72,12 +70,6 @@ export default function HomePage() {
 
                 <section id='gallery'>
                     <ServerGallery />
-                </section>
-
-                <Separator className='mx-auto' />
-
-                <section id='status'>
-                    <ServerStatus />
                 </section>
 
                 <Separator className='mx-auto' />

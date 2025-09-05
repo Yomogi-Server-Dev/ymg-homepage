@@ -25,7 +25,7 @@ export function HeroCarousel() {
     return (
         <ErrorBoundary>
             <section
-                className='relative w-full h-[500px] lg:h-[600px] xl:h-[700px] overflow-hidden bg-gray-100'
+                className='relative w-full h-screen overflow-hidden bg-gray-100'
                 onMouseEnter={config.pauseOnHover ? pause : undefined}
                 onMouseLeave={config.pauseOnHover ? play : undefined}
                 aria-label='Image carousel'
@@ -75,7 +75,7 @@ export function HeroCarousel() {
                                 className='bg-white/20 backdrop-blur-sm text-white border-white hover:bg-white/30'
                                 onClick={() => {
                                     const element =
-                                        document.getElementById('features');
+                                        document.getElementById('status');
                                     if (element) {
                                         const offset = 80;
                                         const elementPosition =
