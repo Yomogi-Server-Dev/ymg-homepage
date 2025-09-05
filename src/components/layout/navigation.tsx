@@ -9,7 +9,8 @@ import {
     SheetTrigger,
 } from '@/components/ui/sheet';
 import { Calendar, Home, Image, Info, Menu, Server, Users } from 'lucide-react';
-import React, { useState } from 'react';
+import type React from 'react';
+import { useState } from 'react';
 
 interface NavItem {
     id: string;

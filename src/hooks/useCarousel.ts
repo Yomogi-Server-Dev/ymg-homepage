@@ -8,7 +8,7 @@ interface UseCarouselProps {
 
 export function useCarousel({ images, config }: UseCarouselProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
-    
+
     const defaultConfig: CarouselConfig = {
         autoPlay: true,
         autoPlayInterval: 5000,
@@ -52,7 +52,12 @@ export function useCarousel({ images, config }: UseCarouselProps) {
         }, mergedConfig.autoPlayInterval);
 
         return () => clearInterval(interval);
-    }, [goToNext, isPlaying, mergedConfig.autoPlay, mergedConfig.autoPlayInterval]);
+    }, [
+        goToNext,
+        isPlaying,
+        mergedConfig.autoPlay,
+        mergedConfig.autoPlayInterval,
+    ]);
 
     return {
         currentIndex,

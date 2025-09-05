@@ -1,10 +1,10 @@
 'use client';
 
+import { serverInfo } from '@/data/server';
 import { MessageCircle } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { Navigation } from './navigation';
-import {serverInfo} from "@/data/server";
 
 export function Header() {
     const [isScrolled, setIsScrolled] = useState(false);

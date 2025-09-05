@@ -1,7 +1,7 @@
 'use client';
 
+import { serverInfo } from '@/data/server';
 import Link from 'next/link';
-import {serverInfo} from "@/data/server";
 
 export function Footer() {
     return (

@@ -2,6 +2,7 @@
 
 import { AdminList } from '@/components/features/admin-list';
 import { CarFeature } from '@/components/features/car-feature';
+import { DiscordInvite } from '@/components/features/discord-invite';
 import { EventBlocks } from '@/components/features/event-blocks';
 import { FeatureBlocks } from '@/components/features/feature-blocks';
 import { HeroCarousel } from '@/components/features/hero-carousel';
@@ -22,11 +23,11 @@ export default function HomePage() {
                             <ServerStatus />
                         </section>
                         <p className='text-lg text-gray-600 max-w-2xl mx-auto animate-slide-up'>
-                            24時間365日いつでもログイン可能なMCBE版生活サーバーです！<br />
+                            24時間365日いつでもログイン可能なMCBE版生活サーバーです！
+                            <br />
                             経済システムや豊富なコンテンツで、初心者から上級者まで楽しめます！
                         </p>
                     </div>
-
                     <div className='mt-12 rounded-lg overflow-hidden shadow-lg'>
                         <Image
                             src='/pictures/index/でかい表示.png'
@@ -37,9 +38,7 @@ export default function HomePage() {
                         />
                     </div>
                 </section>
-
                 <Separator className='mx-auto' />
-
                 <section id='features' className='px-4 py-16'>
                     <h2 className='text-3xl font-bold text-center mb-12'>
                         何ができるの？
@@ -49,9 +48,7 @@ export default function HomePage() {
                     </h3>
                     <FeatureBlocks />
                 </section>
-
                 <Separator className='mx-auto' />
-
                 <section
                     id='events'
                     className='mx-4 px-4 py-16 gradient-primary rounded-lg'
@@ -61,19 +58,15 @@ export default function HomePage() {
                     </h2>
                     <EventBlocks />
                 </section>
-
                 <Separator className='mx-auto' />
-
                 <CarFeature />
-
                 <Separator className='mx-auto' />
-
                 <section id='gallery'>
                     <ServerGallery />
                 </section>
-
                 <Separator className='mx-auto' />
-
+                <DiscordInvite />
+                <Separator className='mx-auto' />
                 <section
                     id='admins'
                     className='mx-4 px-4 py-16 gradient-primary rounded-lg'
