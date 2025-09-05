@@ -8,9 +8,9 @@ interface UseCarouselProps {
 
 export function useCarousel({ images, config }: UseCarouselProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [isPlaying, setIsPlaying] = useState(true);
-
+    
     const defaultConfig: CarouselConfig = {
+        autoPlay: true,
         autoPlayInterval: 5000,
         showArrows: true,
         showIndicators: true,
@@ -18,6 +18,7 @@ export function useCarousel({ images, config }: UseCarouselProps) {
     };
 
     const mergedConfig = { ...defaultConfig, ...config };
+    const [isPlaying, setIsPlaying] = useState(mergedConfig.autoPlay);
 
     const goToPrevious = useCallback(() => {
         setCurrentIndex((prevIndex) =>
@@ -44,14 +45,14 @@ export function useCarousel({ images, config }: UseCarouselProps) {
     const pause = useCallback(() => setIsPlaying(false), []);
 
     useEffect(() => {
-        if (!isPlaying) return;
+        if (!isPlaying || !mergedConfig.autoPlay) return;
 
         const interval = setInterval(() => {
             goToNext();
         }, mergedConfig.autoPlayInterval);
 
         return () => clearInterval(interval);
-    }, [goToNext, isPlaying, mergedConfig.autoPlayInterval]);
+    }, [goToNext, isPlaying, mergedConfig.autoPlay, mergedConfig.autoPlayInterval]);
 
     return {
         currentIndex,

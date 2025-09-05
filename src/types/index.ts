@@ -59,6 +59,7 @@ export interface ContentItem {
 }
 
 export interface CarouselConfig {
+    autoPlay: boolean;
     autoPlayInterval: number;
     showArrows: boolean;
     showIndicators: boolean;

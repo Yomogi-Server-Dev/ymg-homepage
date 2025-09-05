@@ -8,6 +8,7 @@ export const APP_CONFIG = {
 } as const;
 
 export const CAROUSEL_CONFIG: CarouselConfig = {
+    autoPlay: true,
     autoPlayInterval: 5000,
     showArrows: true,
     showIndicators: true,
