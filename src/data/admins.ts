@@ -71,8 +71,8 @@ export const admins: Admin[] = [
     name: 'なっさん',
     gamerTag: 'nassan2727',
     role: 'Builder',
-    avatar: '',
-    description: '',
+    avatar: '/pictures/index/admin/nassan.png',
+    description: '現代建築大好き人間。オシャレなモダンハウス建てるのが1番好き。',
   },
   {
     id: 10,
