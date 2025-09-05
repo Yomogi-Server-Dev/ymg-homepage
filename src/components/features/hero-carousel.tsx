@@ -7,6 +7,7 @@ import { carouselImages } from '@/data/carousel';
 import { useCarousel } from '@/hooks';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export function HeroCarousel() {
     const {
@@ -63,12 +64,14 @@ export function HeroCarousel() {
                             {APP_CONFIG.description}
                         </p>
                         <div className='mt-8 space-x-4 animate-fade-in'>
-                            <Button
-                                size='lg'
-                                className='bg-primary hover:bg-primary/90 text-white font-bold'
-                            >
-                                今すぐ参加
-                            </Button>
+                            <Link href='/join'>
+                                <Button
+                                    size='lg'
+                                    className='bg-primary hover:bg-primary/90 text-white font-bold'
+                                >
+                                    今すぐ参加
+                                </Button>
+                            </Link>
                             <Button
                                 size='lg'
                                 variant='outline'
@@ -101,14 +104,14 @@ export function HeroCarousel() {
                     <>
                         <Button
                             onClick={goToPrevious}
-                            className='absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2'
+                            className='absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 z-30'
                             size='icon'
                         >
                             <ChevronLeft className='w-6 h-6' />
                         </Button>
                         <Button
                             onClick={goToNext}
-                            className='absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2'
+                            className='absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 z-30'
                             size='icon'
                         >
                             <ChevronRight className='w-6 h-6' />

@@ -65,3 +65,10 @@ export interface CarouselConfig {
     showIndicators: boolean;
     pauseOnHover: boolean;
 }
+
+export interface ServerInfo {
+    name: string;
+    address: string;
+    port: string;
+    description?: string;
+}
