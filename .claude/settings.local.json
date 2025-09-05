@@ -12,7 +12,6 @@
             "Bash(npm run lint)",
             "Bash(npm run lint:*)",
             "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server/**)",
-            "Bash(git add:*)",
             "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\components\\features/**)",
             "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\components\\features/**)",
             "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\components\\features/**)",
