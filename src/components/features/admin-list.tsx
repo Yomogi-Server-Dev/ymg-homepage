@@ -28,12 +28,12 @@ export function AdminList() {
                                 <User className='w-5 h-5 text-gray-500' />
                             )}
                         </div>
-                        <div className='flex items-center gap-2 min-w-0'>
-                            <h3 className='font-bold text-base truncate'>
+                        <div className='flex items-center justify-between min-w-0 w-full'>
+                            <h3 className='font-bold text-base truncate mr-auto'>
                                 {admin.name}
                             </h3>
                             <Badge
-                                className={`${roleColors[admin.role]} text-white text-xs flex-shrink-0`}
+                                className={`${roleColors[admin.role]} text-white text-xs flex-shrink-0 ml-auto`}
                             >
                                 {admin.role}
                             </Badge>
