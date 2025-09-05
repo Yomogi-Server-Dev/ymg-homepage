@@ -80,8 +80,8 @@ export const admins: Admin[] = [
         name: 'Makonbu',
         gamerTag: 'makonbu714',
         role: 'Builder',
-        avatar: '',
-        description: '',
+        avatar: '/pictures/index/admin/makonbu.jpg',
+        description: '建築出来ない系建築士',
     },
 ];
 
