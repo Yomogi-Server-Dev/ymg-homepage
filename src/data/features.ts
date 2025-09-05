@@ -1,5 +1,5 @@
 import type { Feature } from '@/types';
-import { Briefcase, Gamepad2, Home, Users } from 'lucide-react';
+import { Briefcase, Gamepad2, Home } from 'lucide-react';
 
 export const features: Feature[] = [
   {
@@ -11,7 +11,7 @@ export const features: Feature[] = [
       '会社は運営に申告すれば誰でも無料で設立できますが、設立の際は一定の審査があります。',
     ],
     detailTitle: '会社システム',
-    imageUrl: '/pictures/index/top/life1.png',
+    imageUrl: '/pictures/index/features/company1.png',
     status: 'active',
   },
   {
@@ -23,7 +23,7 @@ export const features: Feature[] = [
       'Ranking要素やレベルアップボーナスなどもあります！',
     ],
     detailTitle: 'レベルシステム',
-    imageUrl: '/pictures/index/top/expo1.png',
+      imageUrl: '/pictures/index/features/level1.png',
     status: 'active',
   },
   {
@@ -35,7 +35,7 @@ export const features: Feature[] = [
       'クリアすると称号がもらえるぞ！',
     ],
     detailTitle: 'アスレチック',
-    imageUrl: '/pictures/index/top/expo2.png',
+      imageUrl: '/pictures/index/features/athletic1.png',
     status: 'upcoming',
   },
 ];
