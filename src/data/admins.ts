@@ -19,11 +19,11 @@ export const admins: Admin[] = [
     },
     {
         id: 3,
-        name: 'MyDeacy',
-        gamerTag: 'mydeacy',
+        name: 'でーしー',
+        gamerTag: 'MyDeacy',
         role: 'Admin',
-        avatar: '',
-        description: '',
+        avatar: '/pictures/index/admin/deacy.jpg',
+        description: '開発担当。本業は金融系SE。どらえもんを知らない。',
     },
     {
         id: 4,
