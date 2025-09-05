@@ -70,7 +70,9 @@
             "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\app/**)",
             "Read(/C:\\Users\\aida0\\Documents\\claude\\ymg-server\\src\\app/**)"
         ],
-        "deny": [],
+        "deny": [
+            "Bash(git add:*)"
+        ],
         "ask": []
     }
 }
