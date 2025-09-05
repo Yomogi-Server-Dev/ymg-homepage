@@ -2,9 +2,9 @@
 
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
+import { ImageWithLoading } from '@/components/ui/image-with-loading';
 import { admins, roleColors } from '@/data/admins';
 import { User } from 'lucide-react';
-import Image from 'next/image';
 
 export function AdminList() {
     return (
@@ -17,12 +17,14 @@ export function AdminList() {
                     <div className='flex items-center gap-3 mb-2'>
                         <div className='w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center flex-shrink-0 overflow-hidden'>
                             {admin.avatar && admin.avatar !== '/img.png' ? (
-                                <Image
+                                <ImageWithLoading
                                     src={admin.avatar}
                                     alt={admin.name}
                                     width={32}
                                     height={32}
-                                    className='w-full h-full object-cover'
+                                    className='w-full h-full object-contain'
+                                    containerClassName='w-full h-full rounded-full'
+                                    fallbackIcon={User}
                                 />
                             ) : (
                                 <User className='w-5 h-5 text-gray-500' />

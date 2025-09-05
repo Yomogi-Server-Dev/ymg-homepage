@@ -1,9 +1,9 @@
 'use client';
 
+import { ImageWithLoading } from '@/components/ui/image-with-loading';
 import { YouTubeEmbed } from '@/components/ui/youtube-embed';
 import { serverGalleryImages, serverGalleryVideo } from '@/data/media';
 import { Camera } from 'lucide-react';
-import Image from 'next/image';
 
 export function ServerGallery() {
     return (
@@ -19,11 +19,12 @@ export function ServerGallery() {
                         key={image.id}
                         className='rounded-lg overflow-hidden shadow-lg bg-gray-100 h-64 relative'
                     >
-                        <Image
+                        <ImageWithLoading
                             src={image.src}
                             alt={image.alt || 'サーバーの様子'}
                             fill
-                            className='object-cover'
+                            className='object-contain'
+                            containerClassName='w-full h-full'
                         />
                     </div>
                 ))}

@@ -90,7 +90,7 @@ export function ContentBlocks({
                                     src={selectedItem.imageUrl}
                                     alt={selectedItem.detailTitle}
                                     fill
-                                    className='object-cover rounded-lg p-1'
+                                    className='object-contain rounded-lg p-1'
                                 />
                             </AspectRatio>
                         </>

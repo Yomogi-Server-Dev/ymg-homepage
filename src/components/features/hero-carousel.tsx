@@ -2,11 +2,11 @@
 
 import { Button } from '@/components/ui/button';
 import { ErrorBoundary } from '@/components/ui/error-boundary';
+import { ImageWithLoading } from '@/components/ui/image-with-loading';
 import { APP_CONFIG, CAROUSEL_CONFIG } from '@/config';
 import { carouselImages } from '@/data/carousel';
 import { useCarousel } from '@/hooks';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
 
 export function HeroCarousel() {
@@ -43,12 +43,13 @@ export function HeroCarousel() {
                                       : 'translate-x-full'
                             }`}
                         >
-                            <Image
+                            <ImageWithLoading
                                 src={image.src}
                                 alt={image.alt}
                                 fill
                                 className='object-cover'
                                 priority={index === 0}
+                                containerClassName='w-full h-full'
                             />
                             <div className='absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50' />
                         </div>

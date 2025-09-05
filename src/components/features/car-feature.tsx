@@ -1,9 +1,9 @@
 'use client';
 
+import { ImageWithLoading } from '@/components/ui/image-with-loading';
 import { YouTubeEmbed } from '@/components/ui/youtube-embed';
 import { carFeatureImages, carFeatureVideo } from '@/data/media';
 import { Car } from 'lucide-react';
-import Image from 'next/image';
 
 export function CarFeature() {
     return (
@@ -18,11 +18,12 @@ export function CarFeature() {
                         key={image.id}
                         className='rounded-lg overflow-hidden shadow-lg bg-gray-100 h-64 relative'
                     >
-                        <Image
+                        <ImageWithLoading
                             src={image.src}
                             alt={image.alt || '車の機能'}
                             fill
-                            className='object-cover'
+                            className='object-contain'
+                            containerClassName='w-full h-full'
                         />
                     </div>
                 ))}
