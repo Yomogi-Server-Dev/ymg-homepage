@@ -32,7 +32,7 @@ export function ContentBlocks({
                     return (
                         <Card
                             key={item.id}
-                            className='p-6 cursor-pointer transition-all hover:scale-105 hover:shadow-xl border-2 hover:border-primary relative overflow-hidden'
+                            className='p-6 cursor-pointer transition-all hover:scale-105 hover:shadow-xl border-1 hover:border-primary relative overflow-hidden'
                             onClick={() => setSelectedItem(item)}
                         >
                             {item.status === 'upcoming' && (
