@@ -6,7 +6,7 @@ export const admins: Admin[] = [
     name: 'Matsuyuki',
     gamerTag: 'matsuyuki1231',
     role: 'Admin',
-    avatar: '/pictures/index/admin/matsuyuki.jpg',
+    avatar: '/pictures/index/admin/matsuyuki.png',
     description: '管理者',
   },
   {
