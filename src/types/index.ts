@@ -70,5 +70,5 @@ export interface ServerInfo {
     name: string;
     address: string;
     port: string;
-    description?: string;
+    discordInvite: string;
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import {serverInfo} from "@/data/server";
 
 export function Footer() {
     return (
@@ -57,7 +58,7 @@ export function Footer() {
                         <ul className='space-y-2 text-gray-400'>
                             <li>
                                 <a
-                                    href='https://discord.gg/qkjfv5YGvY'
+                                    href={serverInfo.discordInvite}
                                     target='_blank'
                                     rel='noopener noreferrer'
                                     className='hover:text-primary transition-colors'

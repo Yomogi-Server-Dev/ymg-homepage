@@ -4,6 +4,7 @@ import { MessageCircle } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { Navigation } from './navigation';
+import {serverInfo} from "@/data/server";
 
 export function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -46,7 +47,7 @@ export function Header() {
                 </Link>
                 <nav className='flex items-center gap-4'>
                     <Link
-                        href='https://discord.gg/qkjfv5YGvY'
+                        href={serverInfo.discordInvite}
                         target='_blank'
                         rel='noopener noreferrer'
                         className={`flex items-center gap-2 transition-colors duration-300 ${

@@ -4,4 +4,5 @@ export const serverInfo: ServerInfo = {
     name: 'Yomogi Server',
     address: 'ymg24.org',
     port: '19132',
+    discordInvite: 'https://discord.gg/qkjfv5YGvY',
 };
