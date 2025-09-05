@@ -19,7 +19,7 @@ export default function JoinPage() {
         }, 1500);
 
         return () => clearTimeout(timer);
-    }, []);
+    }, [minecraftUrl]);
 
     const copyToClipboard = async () => {
         try {
@@ -48,7 +48,7 @@ export default function JoinPage() {
 
                 <div className='mb-6'>
                     <Button
-                        onClick={() => (window.location.href = minecraftUrl)}
+                        onClick={() => { window.location.href = minecraftUrl; }}
                         size='lg'
                         className='w-full bg-primary hover:bg-primary/90 text-white font-bold'
                     >
