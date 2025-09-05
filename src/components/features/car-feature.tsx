@@ -12,8 +12,6 @@ export function CarFeature() {
                 <Car className='w-8 h-8 text-primary' />
                 車も乗れます！
             </h2>
-
-            {/* 画像ブロック群 */}
             <div className='grid md:grid-cols-2 gap-8 mb-12'>
                 {carFeatureImages.map((image) => (
                     <div
@@ -30,9 +28,8 @@ export function CarFeature() {
                 ))}
             </div>
             <div className='text-center text-lg mb-8'>
-                ご購入検討の方は@bassのdiscord dmまでお知らせください。
+                ご購入検討の方は、よもぎサーバーDiscordグループのlifeカテゴリにあるBMチャンネルからお知らせください。
             </div>
-            {/* YouTube動画 */}
             {carFeatureVideo.youtubeId && (
                 <div className='max-w-4xl mx-auto'>
                     <YouTubeEmbed
