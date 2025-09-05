@@ -23,7 +23,7 @@ export default function HomePage() {
                         </section>
                         <p className='text-lg text-gray-600 max-w-2xl mx-auto animate-slide-up'>
                             24時間365日いつでもログイン可能なMCBE版生活サーバーです！<br />
-                            経済システムや豊富なコンテンツで、初心者から上級者まで楽しめます！詳細は下にスクロール！
+                            経済システムや豊富なコンテンツで、初心者から上級者まで楽しめます！
                         </p>
                     </div>
 

@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
     title: 'Yomogi Server',
-    description: '',
+    description: '24時間365日いつでもログイン可能なMCBE版生活サーバーです！経済システムや豊富なコンテンツで、初心者から上級者まで楽しめます！',
     keywords: 'Minecraft, MCBE, サーバー, サバイバル,生活鯖, Yomogi Server',
     icons: {
         icon: '/favicon.ico',
