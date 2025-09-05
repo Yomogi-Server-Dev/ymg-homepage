@@ -48,7 +48,7 @@ export const admins: Admin[] = [
         gamerTag: 'koruma0317',
         role: 'Admin',
         avatar: '/pictures/index/admin/koruma.png',
-        description: '',
+        description: 'イベント好きです。仲良くしてあげてください。',
     },
     {
         id: 7,
