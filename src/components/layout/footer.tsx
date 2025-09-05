@@ -78,6 +78,21 @@ export function Footer() {
                             </li>
                         </ul>
                     </div>
+                    <div>
+                        <h3 className='font-bold text-lg mb-4'>その他</h3>
+                        <ul className='space-y-2 text-gray-400'>
+                            <li>
+                                <Link
+                                    href='/donation'
+                                    target='_blank'
+                                    rel='noopener noreferrer'
+                                    className='hover:text-primary transition-colors'
+                                >
+                                    寄付
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div className='mt-8 pt-8 border-t border-gray-800 text-center text-gray-400'>
                     <p>
