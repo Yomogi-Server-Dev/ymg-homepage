@@ -13,7 +13,6 @@ export function ServerGallery() {
                 サーバーの様子
             </h2>
 
-            {/* 画像ブロック群 */}
             <div className='grid md:grid-cols-2 gap-8 mb-12'>
                 {serverGalleryImages.map((image) => (
                     <div
@@ -30,7 +29,6 @@ export function ServerGallery() {
                 ))}
             </div>
 
-            {/* YouTube動画 */}
             {serverGalleryVideo.youtubeId && (
                 <div className='max-w-4xl mx-auto'>
                     <YouTubeEmbed

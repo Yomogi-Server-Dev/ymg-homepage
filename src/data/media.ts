@@ -27,25 +27,25 @@ export const serverGalleryImages: MediaItem[] = [
     {
         id: 'server-1',
         type: 'image',
-        src: '/pictures/index/でかい表示.png',
+        src: '/pictures/index/gallery/server1.png',
         alt: 'サーバーの様子1',
     },
     {
         id: 'server-2',
         type: 'image',
-        src: '/pictures/index/でかい表示.png',
+        src: '/pictures/index/gallery/server2.png',
         alt: 'サーバーの様子2',
     },
     {
         id: 'server-3',
         type: 'image',
-        src: '/pictures/index/でかい表示.png',
+        src: '/pictures/index/gallery/server3.png',
         alt: 'サーバーの様子3',
     },
     {
         id: 'server-4',
         type: 'image',
-        src: '/pictures/index/でかい表示.png',
+        src: '/pictures/index/gallery/server4.png',
         alt: 'サーバーの様子4',
     },
 ];
