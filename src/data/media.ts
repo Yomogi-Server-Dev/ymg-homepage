@@ -48,6 +48,18 @@ export const serverGalleryImages: MediaItem[] = [
         src: '/pictures/index/gallery/server4.png',
         alt: 'サーバーの様子4',
     },
+    {
+        id: 'server-5',
+        type: 'image',
+        src: '/pictures/index/gallery/server5.jpg',
+        alt: 'サーバーの様子5',
+    },
+    {
+        id: 'server-6',
+        type: 'image',
+        src: '/pictures/index/gallery/server6.jpg',
+        alt: 'サーバーの様子6',
+    },
 ];
 
 export const serverGalleryVideo: MediaItem = {
