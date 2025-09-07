@@ -51,13 +51,13 @@ export const serverGalleryImages: MediaItem[] = [
     {
         id: 'server-5',
         type: 'image',
-        src: '/pictures/index/gallery/server5.jpg',
+        src: '/pictures/index/gallery/server5.jpeg',
         alt: 'サーバーの様子5',
     },
     {
         id: 'server-6',
         type: 'image',
-        src: '/pictures/index/gallery/server6.jpg',
+        src: '/pictures/index/gallery/server6.jpeg',
         alt: 'サーバーの様子6',
     },
 ];
