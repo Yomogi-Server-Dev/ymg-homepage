@@ -19,7 +19,7 @@ export const carFeatureVideo: MediaItem = {
     id: 'car-youtube',
     type: 'youtube',
     src: '',
-    youtubeId: 'MRHCyJt8GU4',
+    youtubeId: 'kQ-H3F3btVM',
     title: '車の機能紹介動画',
 };
 
