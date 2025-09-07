@@ -63,8 +63,8 @@ export const admins: Admin[] = [
         name: 'ちきうネコ',
         gamerTag: 'terracat2020',
         role: 'Builder',
-        avatar: '',
-        description: '',
+        avatar: '/pictures/index/admin/tikiuneko.jpg',
+        description: '建築しない系建築士',
     },
     {
         id: 9,
