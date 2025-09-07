@@ -20,7 +20,7 @@ export const events: Event[] = [
         schedule: '毎週土曜日21時~',
         description: [''],
         detailTitle: '人狼イベント',
-        imageUrl: '/pictures/index/event/wolf.png',
+        imageUrl: '/pictures/index/gallery/server2.png', // 一旦
     },
     {
         id: 3,
