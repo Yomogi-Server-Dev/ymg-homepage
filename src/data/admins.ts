@@ -59,7 +59,15 @@ export const admins: Admin[] = [
         description: '車作ったり、動画作ったりしてます。',
     },
     {
-        id: 8,
+        id:8,
+        name: 'すがわらんかける6^n',
+        gamerTag: 'RanRanRan6436',
+        role: 'Admin',
+        avatar: '/pictures/index/admin/ran6.png',
+        description: 'らん×6です。コミュニケーションが得意です。',
+    },
+    {
+        id: 9,
         name: 'ちきうネコ',
         gamerTag: 'terracat2020',
         role: 'Builder',
@@ -67,7 +75,7 @@ export const admins: Admin[] = [
         description: '建築しない系建築士',
     },
     {
-        id: 9,
+        id: 10,
         name: 'なっさん',
         gamerTag: 'nassan2727',
         role: 'Builder',
@@ -76,7 +84,7 @@ export const admins: Admin[] = [
             '現代建築大好き人間。オシャレなモダンハウス建てるのが1番好き。',
     },
     {
-        id: 10,
+        id: 11,
         name: 'Makonbu',
         gamerTag: 'makonbu714',
         role: 'Builder',

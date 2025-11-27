@@ -19,7 +19,7 @@ export const carFeatureVideo: MediaItem = {
     id: 'car-youtube',
     type: 'youtube',
     src: '',
-    youtubeId: 'MRHCyJt8GU4',
+    youtubeId: 'kQ-H3F3btVM',
     title: '車の機能紹介動画',
 };
 
@@ -47,6 +47,18 @@ export const serverGalleryImages: MediaItem[] = [
         type: 'image',
         src: '/pictures/index/gallery/server4.png',
         alt: 'サーバーの様子4',
+    },
+    {
+        id: 'server-5',
+        type: 'image',
+        src: '/pictures/index/gallery/server5.jpeg',
+        alt: 'サーバーの様子5',
+    },
+    {
+        id: 'server-6',
+        type: 'image',
+        src: '/pictures/index/gallery/server6.jpeg',
+        alt: 'サーバーの様子6',
     },
 ];
 
