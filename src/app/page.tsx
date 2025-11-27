@@ -10,6 +10,7 @@ import { ServerGallery } from '@/components/features/server-gallery';
 import { ServerStatus } from '@/components/features/server-status';
 import { Separator } from '@/components/ui/separator';
 import Image from 'next/image';
+import {NoticeList} from "@/components/features/notice-list";
 
 export default function HomePage() {
     return (
@@ -111,6 +112,16 @@ export default function HomePage() {
                 </section>
                 <Separator className='mx-auto' />
                 <DiscordInvite />
+                <Separator className='mx-auto' />
+                <section
+                    id='notices'
+                    className='mx-4 px-4 py-16 gradient-primary rounded-lg'
+                >
+                    <h2 className='text-3xl font-bold text-center mb-12'>
+                        直近のお知らせ
+                    </h2>
+                    <NoticeList />
+                </section>
                 <Separator className='mx-auto' />
                 <section
                     id='admins'

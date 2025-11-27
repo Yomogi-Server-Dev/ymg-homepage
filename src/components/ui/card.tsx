@@ -73,6 +73,21 @@ const CardFooter = React.forwardRef<
 ));
 CardFooter.displayName = 'CardFooter';
 
+const TriangleCard = React.forwardRef<
+    HTMLDivElement,
+    React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+    <div
+        ref={ref}
+        className={cn(
+            'rounded-md border-b-emerald-950 shadow bg-white',
+            className,
+        )}
+        {...props}
+    />
+));
+TriangleCard.displayName = 'TriangleCard';
+
 export {
     Card,
     CardHeader,
@@ -80,4 +95,5 @@ export {
     CardTitle,
     CardDescription,
     CardContent,
+    TriangleCard
 };

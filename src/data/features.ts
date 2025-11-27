@@ -36,6 +36,6 @@ export const features: Feature[] = [
         ],
         detailTitle: 'アスレチック',
         imageUrl: '/pictures/index/features/athletic1.png',
-        status: 'upcoming',
+        status: 'active',
     },
 ];

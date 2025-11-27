@@ -7,7 +7,7 @@ export const events: Event[] = [
         title: 'CreativeExpo2025',
         icon: Trophy,
         status: 'active',
-        schedule: '現在開催中',
+        schedule: '開催終了',
         description: [''],
         detailTitle: 'CreativeExpo2025',
         imageUrl: '/pictures/index/event/CreativeEXPO2025.jpeg',
