@@ -9,7 +9,8 @@ export type SimpleNotice = {
     title: string,
     content: string,
     author: string,
-    created_at: string
+    created_at: string,
+    created_at_diff: string
 }
 
 export function NoticeList() {
@@ -40,7 +41,7 @@ export function NoticeList() {
                             {notice.title}
                         </p>
                         <p className='text-sm text-cyan-700 font-medium opacity-70 truncate'>
-                             - {notice.created_at} by {notice.author}
+                             - {notice.author} {notice.created_at_diff}
                         </p>
                     </div>
                     <div className='mb-2'>

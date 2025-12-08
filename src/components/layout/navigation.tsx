@@ -8,7 +8,7 @@ import {
     SheetTitle,
     SheetTrigger,
 } from '@/components/ui/sheet';
-import { Calendar, Home, Image, Info, Menu, Server, Users } from 'lucide-react';
+import { Calendar, Home, Image, Info, Menu, Server, Mails, Users } from 'lucide-react';
 import type React from 'react';
 import { useState } from 'react';
 
@@ -25,10 +25,11 @@ interface NavigationProps {
 
 const navItems: NavItem[] = [
     { id: 'home', label: 'ホーム', href: '#', icon: Home },
+    { id: 'status', label: 'サーバー情報', href: '#status', icon: Server },
     { id: 'features', label: '特徴', href: '#features', icon: Info },
     { id: 'events', label: 'イベント', href: '#events', icon: Calendar },
     { id: 'gallery', label: 'ギャラリー', href: '#gallery', icon: Image },
-    { id: 'status', label: 'サーバー情報', href: '#status', icon: Server },
+    { id: 'notices', label: '最近のお知らせ', href: '#notices', icon: Mails },
     { id: 'admins', label: '運営一覧', href: '#admins', icon: Users },
 ];
 
