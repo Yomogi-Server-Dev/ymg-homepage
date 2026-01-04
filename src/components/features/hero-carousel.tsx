@@ -65,7 +65,7 @@ export function HeroCarousel() {
                             {APP_CONFIG.description}
                         </p>
                         <div className='mt-8 space-x-4 animate-fade-in'>
-                            <Link href='/join'>
+                            <Link href='/discord'>
                                 <Button
                                     size='lg'
                                     className='bg-primary hover:bg-primary/90 text-white font-bold'
