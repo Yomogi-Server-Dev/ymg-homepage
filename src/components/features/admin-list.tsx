@@ -7,9 +7,15 @@ import { admins, roleColors } from '@/data/admins';
 import { User } from 'lucide-react';
 
 export function AdminList() {
+    // Admin→Builderの順でソート
+    const sortedAdmins = [...admins].sort((a, b) => {
+        if (a.role === b.role) return 0;
+        if (a.role === 'Admin') return -1;
+        return 1;
+    });
     return (
         <div className='grid sm:grid-cols-2 gap-6'>
-            {admins.map((admin) => (
+            {sortedAdmins.map((admin) => (
                 <Card
                     key={admin.id}
                     className='p-4 hover:shadow-lg transition-shadow'

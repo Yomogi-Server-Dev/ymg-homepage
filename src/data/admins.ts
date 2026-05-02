@@ -91,6 +91,30 @@ export const admins: Admin[] = [
         avatar: '/pictures/index/admin/makonbu.jpg',
         description: '建築出来ない系建築士',
     },
+    {
+        id: 12,
+        name: 'Ragazzo',
+        gamerTag: 'Ragazzo',
+        role: 'Admin',
+        avatar: '/pictures/index/admin/ragazoo.png',
+        description: 'レスポンスが早いことで有名です。呼ばれたらきっと来ます。',
+    },
+    {
+        id: 13,
+        name: 'くき',
+        gamerTag: 'くき',
+        role: 'Admin',
+        avatar: '/pictures/index/admin/cookie.png',
+        description: '建築ができないのでプラグイン開発頑張ります。',
+    },
+    {
+        id: 14,
+        name: 'はるきち',
+        gamerTag: 'ぴにゃくる',
+        role: 'Admin',
+        avatar: '/pictures/index/admin/harukiti.png',
+        description: 'HTです。気分で動画作ります。',
+    },
 ];
 
 export const roleColors: Record<AdminRole, string> = {
