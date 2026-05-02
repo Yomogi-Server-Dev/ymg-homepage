@@ -104,7 +104,7 @@ export const admins: Admin[] = [
         name: 'くき',
         gamerTag: 'くき',
         role: 'Admin',
-        avatar: '/pictures/index/admin/cookie.png',
+        avatar: '/pictures/index/admin/cookie.jpg',
         description: '建築ができないのでプラグイン開発頑張ります。',
     },
     {
