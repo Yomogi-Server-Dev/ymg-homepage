@@ -26,15 +26,6 @@ export const admins: Admin[] = [
         description: '開発担当。本業は金融系SE。どらえもんを知らない。',
     },
     {
-        id: 4,
-        name: 'aida',
-        gamerTag: 'aida0710',
-        role: 'Admin',
-        avatar: '/pictures/index/admin/aida.jpg',
-        description:
-            '鯖管(物理)だったりプラグイン開発してます。ネットワークインフラが好きです。',
-    },
-    {
         id: 5,
         name: 'こぐま',
         gamerTag: 'kogumapotato',
@@ -108,7 +99,7 @@ export const admins: Admin[] = [
         description: '建築ができないのでプラグイン開発頑張ります。',
     },
     {
-        id: 14,
+        id: 4,
         name: 'はるきち',
         gamerTag: 'ぴにゃくる',
         role: 'Admin',
