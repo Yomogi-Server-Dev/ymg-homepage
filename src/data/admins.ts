@@ -26,15 +26,6 @@ export const admins: Admin[] = [
         description: '開発担当。本業は金融系SE。どらえもんを知らない。',
     },
     {
-        id: 4,
-        name: 'aida',
-        gamerTag: 'aida0710',
-        role: 'Admin',
-        avatar: '/pictures/index/admin/aida.jpg',
-        description:
-            '鯖管(物理)だったりプラグイン開発してます。ネットワークインフラが好きです。',
-    },
-    {
         id: 5,
         name: 'こぐま',
         gamerTag: 'kogumapotato',
@@ -90,6 +81,30 @@ export const admins: Admin[] = [
         role: 'Builder',
         avatar: '/pictures/index/admin/makonbu.jpg',
         description: '建築出来ない系建築士',
+    },
+    {
+        id: 12,
+        name: 'Ragazzo',
+        gamerTag: 'Ragazzo',
+        role: 'Admin',
+        avatar: '/pictures/index/admin/ragazzo.png',
+        description: 'レスポンスが早いことで有名です。呼ばれたらきっと来ます。',
+    },
+    {
+        id: 13,
+        name: 'くき',
+        gamerTag: 'くき',
+        role: 'Admin',
+        avatar: '/pictures/index/admin/cookie.jpg',
+        description: '建築ができないのでプラグイン開発頑張ります。',
+    },
+    {
+        id: 4,
+        name: 'はるきち',
+        gamerTag: 'ぴにゃくる',
+        role: 'Admin',
+        avatar: '/pictures/index/admin/harukiti.png',
+        description: 'HTです。気分で動画作ります。',
     },
 ];
 
