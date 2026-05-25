@@ -11,6 +11,7 @@ import { ServerStatus } from '@/components/features/server-status';
 import { Separator } from '@/components/ui/separator';
 import Image from 'next/image';
 import {NoticeList} from "@/components/features/notice-list";
+import Link from 'next/link';
 
 export default function HomePage() {
     return (
@@ -121,6 +122,14 @@ export default function HomePage() {
                         直近のお知らせ
                     </h2>
                     <NoticeList />
+                    <div className='text-center mt-8'>
+                        <Link
+                            href='/notices'
+                            className='inline-block px-6 py-2 rounded-md border border-gray-400 bg-white text-gray-700 text-sm font-medium hover:bg-gray-50 transition-colors'
+                        >
+                            お知らせをもっと見る
+                        </Link>
+                    </div>
                 </section>
                 <Separator className='mx-auto' />
                 <section

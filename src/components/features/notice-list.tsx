@@ -3,6 +3,7 @@
 import {Card, TriangleCard} from '@/components/ui/card';
 import { User } from 'lucide-react';
 import { useEffect, useState } from "react";
+import Link from 'next/link';
 
 export type SimpleNotice = {
     id: number,
@@ -32,9 +33,9 @@ export function NoticeList() {
     return (
         <div className='gap-6'>
             {notices.map((notice) => (
+                <Link key={notice.id} href={`/notices/${notice.id}`}>
                 <TriangleCard
-                    key={notice.id}
-                    className='p-3 hover:shadow-lg transition-shadow m-4'
+                    className='p-3 hover:shadow-lg transition-shadow m-4 cursor-pointer'
                 >
                     <div className='mt-2 mb-1 flex flex-row items-end ml-0.5'>
                         <p className='text-base text-cyan-600 font-medium mr-1'>
@@ -50,6 +51,7 @@ export function NoticeList() {
                         </p>
                     </div>
                 </TriangleCard>
+                </Link>
             ))}
         </div>
     );
