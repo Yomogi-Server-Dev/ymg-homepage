@@ -99,12 +99,36 @@ export const admins: Admin[] = [
         description: '建築ができないのでプラグイン開発頑張ります。',
     },
     {
-        id: 4,
+        id: 14,
         name: 'はるきち',
         gamerTag: 'ぴにゃくる',
         role: 'Admin',
         avatar: '/pictures/index/admin/harukiti.png',
         description: 'HTです。気分で動画作ります。',
+    },
+    {
+        id: 15,
+        name: 'He_to_me（ヒツミ）',
+        gamerTag: 'He_to_me0925',
+        role: 'Admin',
+        avatar: '/pictures/index/admin/he_to_me.png',
+        description: '開発以外は何でもできる気がする。よもぎに都合がいい女です',
+    },
+    {
+        id: 16,
+        name: '雪桜ユリ',
+        gamerTag: 'yukiyuri0109',
+        role: 'Admin',
+        avatar: '/pictures/index/admin/yuriyuki.jpg',
+        description: '楽しいイベントを考えれる、気楽な人です',
+    },
+    {
+        id: 17,
+        name: 'はろるどん',
+        gamerTag: 'rudo232',
+        role: 'Admin',
+        avatar: '/pictures/index/admin/rudo.png',
+        description: '釣りが体の8割を占めている鯖民のお話を聞く役。',
     },
 ];
 
