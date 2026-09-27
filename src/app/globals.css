@@ -2,6 +2,10 @@
 @import "tw-animate-css";
 
 @theme {
+    --font-sans: "Manrope Variable", "Noto Sans JP Variable", "Yu Gothic UI",
+        "Hiragino Kaku Gothic ProN", sans-serif;
+    --font-mono: "Cascadia Code", Consolas, monospace;
+
     --color-primary: #84cc16;
     --color-primary-50: #f7fee7;
     --color-primary-100: #ecfccb;
@@ -36,6 +40,905 @@
     --animate-fade-out: fade-out 0.2s ease-in-out;
     --animate-zoom-in: zoom-in 0.2s ease-out;
     --animate-zoom-out: zoom-out 0.2s ease-in;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 96px;
+    }
+
+    body {
+        margin: 0;
+        overflow-x: hidden;
+        background: #fffaf2;
+        color: #19231a;
+        font-feature-settings: "kern" 1, "palt" 1;
+        text-rendering: optimizeLegibility;
+    }
+
+    ::selection {
+        background: #ffe184;
+        color: #273227;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+.hero-world-image {
+    animation: hero-world-drift 20s ease-in-out infinite alternate;
+    transform: scale(1.06);
+}
+
+.creative-home {
+    --pointer-x: 72vw;
+    --pointer-y: 34vh;
+}
+
+.hero-pointer-light {
+    background: radial-gradient(
+        circle 360px at var(--pointer-x) var(--pointer-y),
+        rgba(163, 230, 53, 0.34),
+        rgba(190, 242, 100, 0.08) 45%,
+        transparent 72%
+    );
+}
+
+.hero-ghost-word {
+    -webkit-text-stroke: 2px rgba(54, 83, 20, 0.12);
+    animation: ghost-word-drift 12s ease-in-out infinite alternate;
+}
+
+.hero-world-frame {
+    border-radius: 1.35rem;
+    clip-path: inset(0 round 1.35rem);
+}
+
+.world-collage::after {
+    position: absolute;
+    top: 17%;
+    right: 3%;
+    z-index: 15;
+    width: 6rem;
+    height: 6rem;
+    border: 2px solid #0f172a;
+    border-radius: 999px;
+    background: #a3e635;
+    color: #0f172a;
+    content: "24/7";
+    display: grid;
+    place-items: center;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    animation: orbit-stamp 8s linear infinite;
+}
+
+.hero-photo-chip {
+    animation: photo-chip-float 5.5s ease-in-out infinite;
+}
+
+.hero-avatar-float {
+    animation: hero-avatar-float 5s ease-in-out infinite;
+}
+
+.status-float {
+    animation: status-float 4s ease-in-out 0.6s infinite;
+}
+
+.portal-shell {
+    animation: portal-arrive 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.portal-destination::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 0.42rem;
+    background: #a3e635;
+    content: "";
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portal-destination {
+    border-radius: 1.2rem;
+}
+
+.portal-destination:hover {
+    transform: translateY(-0.4rem);
+    box-shadow: 8px 8px 0 rgba(15, 23, 42, 0.25);
+}
+
+.portal-destination:hover::after {
+    transform: scaleX(1);
+}
+
+.portal-minor-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    border: 2px solid #0f172a;
+    border-radius: 0.8rem;
+    background: rgba(255, 255, 255, 0.35);
+    padding: 0.6rem 0.85rem;
+    color: #0f172a;
+    font-size: 0.75rem;
+    font-weight: 900;
+    transition: color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.portal-minor-link:hover {
+    background: #0f172a;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.feature-poster {
+    border-radius: 1.35rem;
+    transform-origin: center;
+}
+
+.life-ghost-word {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.08);
+}
+
+.wolf-teaser-cut {
+    border-radius: 1.75rem;
+}
+
+.storybook-orbit {
+    border-radius: 42% 58% 48% 52% / 45% 42% 58% 55%;
+    animation: storybook-orbit 10s ease-in-out infinite alternate;
+}
+
+.storybook-avatar {
+    animation: storybook-avatar 5.5s ease-in-out infinite;
+}
+
+.hero-misia {
+    --misia-outline: clamp(1px, 0.12vw, 1.5px);
+    filter: drop-shadow(var(--misia-outline) 0 0 #fffdf5)
+        drop-shadow(calc(-1 * var(--misia-outline)) 0 0 #fffdf5)
+        drop-shadow(0 var(--misia-outline) 0 #fffdf5)
+        drop-shadow(0 calc(-1 * var(--misia-outline)) 0 #fffdf5)
+        drop-shadow(0 14px 15px rgba(34, 57, 35, 0.2));
+}
+
+.float-word {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid white;
+    border-radius: 999px;
+    padding: 0.65rem 1rem;
+    box-shadow: 0 10px 24px rgba(32, 56, 31, 0.13);
+    font-size: 0.8rem;
+    font-weight: 900;
+    animation: float-word 4.5s ease-in-out infinite;
+}
+
+.float-word:nth-of-type(2) {
+    animation-delay: -1.5s;
+}
+
+.float-word:nth-of-type(3) {
+    animation-delay: -3s;
+}
+
+.kid-map-card:hover {
+    transform: translateY(-0.45rem) rotate(0deg);
+    box-shadow: 0 20px 42px rgba(31, 44, 32, 0.13);
+}
+
+.kid-map-card {
+    box-shadow: 0 12px 30px rgba(31, 44, 32, 0.08);
+}
+
+.mc-item-slot {
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.24) 0 0),
+        linear-gradient(rgba(43, 67, 38, 0.06) 0 0);
+    background-position: 0.5rem 0.45rem, calc(100% - 0.55rem)
+        calc(100% - 0.5rem);
+    background-repeat: no-repeat;
+    background-size: 0.65rem 0.45rem, 0.55rem 0.55rem;
+    box-shadow: inset 0 -5px 0 rgba(39, 51, 39, 0.08), 0 5px 0
+        rgba(48, 62, 47, 0.11);
+}
+
+.mc-header-shell {
+    box-shadow: inset 0 4px 0 rgba(255, 255, 255, 0.34), inset 0 -4px 0
+        rgba(32, 50, 31, 0.08), 0 10px 35px rgba(31, 50, 32, 0.1);
+}
+
+.mc-section-chip {
+    box-shadow: inset 0 -4px 0 rgba(58, 87, 48, 0.08), 0 6px 16px
+        rgba(44, 71, 39, 0.07);
+    transform: rotate(-0.6deg);
+}
+
+.mc-sky-biome {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.34) 0 0),
+        linear-gradient(rgba(255, 255, 255, 0.25) 0 0),
+        linear-gradient(rgba(255, 255, 255, 0.2) 0 0),
+        linear-gradient(rgba(103, 190, 220, 0.08) 0 0),
+        linear-gradient(rgba(137, 211, 95, 0.08) 0 0);
+    background-position: 4% 19%, 10% 16%, 72% 11%, 62% 36%, 91% 67%;
+    background-repeat: no-repeat;
+    background-size: 7rem 1.35rem, 3.2rem 1.35rem, 6rem 1.15rem, 1.4rem 1.4rem,
+        1.15rem 1.15rem;
+}
+
+.mc-ground-biome {
+    background-image: linear-gradient(rgba(114, 80, 48, 0.055) 0 0),
+        linear-gradient(rgba(91, 126, 71, 0.06) 0 0),
+        linear-gradient(rgba(114, 80, 48, 0.045) 0 0),
+        linear-gradient(rgba(113, 161, 79, 0.055) 0 0),
+        linear-gradient(rgba(114, 80, 48, 0.05) 0 0);
+    background-position: 5% 17%, 92% 12%, 86% 56%, 12% 71%, 65% 88%;
+    background-repeat: no-repeat;
+    background-size: 1.15rem 1.15rem, 1.5rem 1.5rem, 0.85rem 0.85rem, 1rem 1rem,
+        1.35rem 1.35rem;
+}
+
+.mc-night-biome {
+    background-image: linear-gradient(rgba(242, 95, 92, 0.07) 0 0),
+        linear-gradient(rgba(255, 143, 139, 0.045) 0 0),
+        linear-gradient(rgba(127, 29, 45, 0.11) 0 0),
+        linear-gradient(rgba(159, 149, 255, 0.04) 0 0);
+    background-position: 7% 25%, 88% 18%, 79% 63%, 16% 82%;
+    background-repeat: no-repeat;
+    background-size: 1.35rem 1.35rem, 0.85rem 0.85rem, 1.8rem 1.8rem, 1.1rem
+        1.1rem;
+}
+
+:where(
+        .mc-feature-card,
+        .kid-map-card,
+        .team-profile-card,
+        .mc-world-card,
+        .wolf-game-card,
+        .mc-notice-card,
+        .mc-article-block
+    ) {
+    position: relative;
+    isolation: isolate;
+}
+
+:where(
+        .mc-feature-card,
+        .kid-map-card,
+        .team-profile-card,
+        .mc-world-card,
+        .wolf-game-card,
+        .mc-notice-card,
+        .mc-article-block
+    )::before {
+    position: absolute;
+    z-index: 8;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: inset 0 7px 0 rgba(255, 255, 255, 0.28), inset 0 -7px 0
+        rgba(40, 62, 36, 0.055);
+    content: "";
+    pointer-events: none;
+}
+
+:where(
+        .mc-feature-card,
+        .kid-map-card,
+        .team-profile-card,
+        .mc-world-card,
+        .wolf-game-card,
+        .mc-notice-card,
+        .mc-article-block
+    )::after {
+    position: absolute;
+    right: 1.15rem;
+    bottom: 1rem;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 0.22rem;
+    background: currentColor;
+    box-shadow: -1rem -0.45rem 0 currentColor, 0.15rem -1.1rem 0 currentColor;
+    content: "";
+    opacity: 0.035;
+    pointer-events: none;
+    transition: translate 300ms ease, rotate 300ms ease;
+}
+
+:where(
+        .mc-feature-card,
+        .kid-map-card,
+        .team-profile-card,
+        .mc-world-card,
+        .wolf-game-card,
+        .mc-notice-card
+    ):hover::after {
+    translate: -0.2rem -0.2rem;
+    rotate: -8deg;
+}
+
+.mc-notice-card {
+    box-shadow: inset 0 6px 0 rgba(137, 197, 88, 0.3), 0 14px 36px
+        rgba(66, 82, 58, 0.08);
+}
+
+.mc-notice-card:hover {
+    box-shadow: inset 0 6px 0 rgba(137, 197, 88, 0.48), 0 20px 44px
+        rgba(66, 82, 58, 0.13);
+}
+
+.mc-article-block {
+    box-shadow: inset 0 8px 0 rgba(137, 197, 88, 0.28), 0 18px 50px
+        rgba(66, 82, 58, 0.1);
+}
+
+.mc-footer-shell {
+    background-image: linear-gradient(rgba(174, 232, 129, 0.045) 0 0),
+        linear-gradient(rgba(116, 157, 83, 0.035) 0 0),
+        linear-gradient(rgba(255, 255, 255, 0.025) 0 0);
+    background-position: 9% 22%, 83% 29%, 72% 78%;
+    background-repeat: no-repeat;
+    background-size: 1.5rem 1.5rem, 2rem 2rem, 1rem 1rem;
+    box-shadow: inset 0 8px 0 rgba(157, 213, 112, 0.12);
+}
+
+.mc-feature-card {
+    box-shadow: inset 0 7px 0 rgba(135, 194, 86, 0.48), 0 18px 40px
+        rgba(51, 79, 45, 0.09);
+}
+
+.mc-game-screen {
+    box-shadow: 0 7px 0 rgba(55, 78, 52, 0.13);
+}
+
+.team-profile-card {
+    box-shadow: inset 0 5px 0 rgba(132, 190, 79, 0.5), 0 10px 24px
+        rgba(93, 75, 28, 0.07);
+}
+
+.team-profile-card > p:last-child {
+    box-shadow: inset 0 4px 0 rgba(127, 164, 91, 0.09);
+}
+
+.server-gallery-card {
+    transition: translate 280ms ease, rotate 280ms ease;
+}
+
+.server-gallery-card:nth-child(odd) {
+    rotate: -0.6deg;
+}
+
+.server-gallery-card:nth-child(even) {
+    rotate: 0.6deg;
+}
+
+.server-gallery-card:hover {
+    translate: 0 -0.45rem;
+    rotate: 0deg;
+}
+
+.server-gallery-speech::before {
+    position: absolute;
+    top: -0.42rem;
+    width: 1.05rem;
+    height: 1.05rem;
+    border-radius: 0.25rem;
+    background: inherit;
+    content: "";
+    rotate: 45deg;
+}
+
+.server-gallery-speech[data-placement="top"]::before {
+    top: auto;
+    bottom: -0.42rem;
+}
+
+.server-gallery-speech[data-side="left"]::before {
+    left: 1.5rem;
+}
+
+.server-gallery-speech[data-side="right"]::before {
+    right: 1.5rem;
+}
+
+.server-gallery-image img {
+    transition: transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.server-gallery-card:hover .server-gallery-image img {
+    transform: scale(1.045);
+}
+
+.tutorial-hero-photo {
+    border-radius: 37% 63% 44% 56% / 48% 41% 59% 52%;
+    animation: tutorial-photo-shape 9s ease-in-out infinite alternate;
+}
+
+.mc-world-card {
+    z-index: 1;
+    box-shadow: inset 0 8px 0 rgba(255, 255, 255, 0.46), 0 20px 55px
+        rgba(49, 73, 43, 0.1);
+}
+
+.wolf-photo-shape {
+    border-radius: 56% 44% 41% 59% / 42% 53% 47% 58%;
+    animation: wolf-photo-shape 11s ease-in-out infinite alternate;
+}
+
+.wolf-pixel-moon {
+    background:
+        linear-gradient(#8f1828 0 0) 22% 24% / 14% 12% no-repeat,
+        linear-gradient(#ff9a91 0 0) 73% 67% / 12% 14% no-repeat,
+        linear-gradient(#a62634 0 0) 34% 76% / 10% 9% no-repeat,
+        linear-gradient(#751522 0 0) 68% 30% / 9% 8% no-repeat, #f2726f;
+    animation: wolf-pixel-moon 5s ease-in-out infinite;
+}
+
+.wolf-game-card {
+    box-shadow: inset 0 7px 0 rgba(242, 114, 111, 0.12);
+}
+
+.mc-decor-block {
+    position: absolute;
+    pointer-events: none;
+    overflow: hidden;
+    border-radius: 22%;
+    box-shadow: inset 0 12px 0 rgba(255, 255, 255, 0.14), inset 0 -14px 0
+        rgba(49, 37, 26, 0.12), 0 24px 44px rgba(66, 83, 58, 0.15);
+    animation: mc-decor-block-float 7s ease-in-out infinite;
+}
+
+.mc-decor-block::before,
+.mc-voxel::before {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 34%;
+    height: 11%;
+    border-radius: 0.35rem;
+    background: rgba(255, 255, 255, 0.13);
+    content: "";
+}
+
+.mc-decor-block::after,
+.mc-voxel::after {
+    position: absolute;
+    right: 10%;
+    bottom: 9%;
+    width: 17%;
+    aspect-ratio: 1;
+    border-radius: 28%;
+    background: rgba(40, 36, 29, 0.09);
+    box-shadow: -1.1em -0.75em 0 rgba(255, 255, 255, 0.07);
+    content: "";
+}
+
+.mc-decor-block-grass,
+.mc-voxel-grass {
+    background:
+        linear-gradient(#6f4b35 0 0) 19% 65% / 12% 10% no-repeat,
+        linear-gradient(#c18e61 0 0) 73% 57% / 10% 9% no-repeat,
+        linear-gradient(#79553a 0 0) 58% 84% / 13% 9% no-repeat,
+        linear-gradient(#75bf4e 0 0) 17% 20% / 16% 9% no-repeat,
+        linear-gradient(
+            180deg,
+            #afea78 0 27%,
+            #82c857 27% 35%,
+            #a47752 35% 100%
+        );
+}
+
+.mc-decor-block-dirt,
+.mc-voxel-dirt {
+    background:
+        linear-gradient(#704a32 0 0) 20% 64% / 13% 10% no-repeat,
+        linear-gradient(#c59061 0 0) 72% 35% / 11% 9% no-repeat,
+        linear-gradient(#765038 0 0) 54% 82% / 15% 8% no-repeat,
+        linear-gradient(#bc875a 0 0) 35% 22% / 9% 12% no-repeat, #a97852;
+}
+
+.mc-decor-block-dirt {
+    animation-delay: -2.5s;
+}
+
+.mc-decor-block-stone,
+.mc-voxel-stone {
+    background:
+        linear-gradient(#767f7a 0 0) 20% 66% / 16% 12% no-repeat,
+        linear-gradient(#cbd1cd 0 0) 73% 34% / 13% 11% no-repeat,
+        linear-gradient(#858d88 0 0) 52% 82% / 11% 9% no-repeat,
+        linear-gradient(#b7beba 0 0) 30% 23% / 9% 8% no-repeat, #a5ada7;
+    animation-delay: -1.4s;
+}
+
+.mc-decor-block-diamond,
+.mc-voxel-diamond {
+    background:
+        linear-gradient(#47d8dd 0 0) 22% 28% / 15% 14% no-repeat,
+        linear-gradient(#8ff5ed 0 0) 68% 62% / 13% 16% no-repeat,
+        linear-gradient(#22aeb9 0 0) 42% 79% / 9% 10% no-repeat,
+        linear-gradient(#6a7470 0 0) 77% 24% / 12% 9% no-repeat,
+        linear-gradient(#c5ccc8 0 0) 34% 56% / 10% 8% no-repeat, #929b96;
+    animation-delay: -3.6s;
+}
+
+.mc-decor-block-emerald {
+    background:
+        linear-gradient(#4bd58a 0 0) 22% 27% / 16% 14% no-repeat,
+        linear-gradient(#9aefbd 0 0) 68% 62% / 13% 15% no-repeat,
+        linear-gradient(#239d62 0 0) 43% 80% / 10% 10% no-repeat,
+        linear-gradient(#707b75 0 0) 77% 24% / 12% 9% no-repeat,
+        linear-gradient(#cbd2ce 0 0) 34% 56% / 10% 8% no-repeat, #98a19c;
+    animation-delay: -5.1s;
+}
+
+.mc-decor-block-redstone,
+.mc-voxel-redstone {
+    background:
+        linear-gradient(#ed4c55 0 0) 23% 28% / 14% 13% no-repeat,
+        linear-gradient(#9d1524 0 0) 69% 66% / 15% 14% no-repeat,
+        linear-gradient(#ff7774 0 0) 42% 81% / 9% 10% no-repeat,
+        linear-gradient(#555b58 0 0) 75% 26% / 11% 9% no-repeat, #777e7a;
+    animation-delay: -4.4s;
+}
+
+.mc-block-cluster {
+    grid-template-columns: repeat(3, 52px);
+    grid-template-rows: repeat(2, 52px);
+    gap: 8px;
+    width: 172px;
+    transform: rotate(-7deg);
+}
+
+.mc-voxel {
+    position: relative;
+    display: block;
+    width: 52px;
+    height: 52px;
+    border-radius: 15px;
+    box-shadow: inset 0 9px 0 rgba(255, 255, 255, 0.14), inset 0 -8px 0
+        rgba(23, 35, 22, 0.12), 0 9px 16px rgba(38, 56, 35, 0.16);
+    animation: mc-voxel-float 5s ease-in-out infinite;
+}
+
+.mc-voxel:nth-child(1) {
+    grid-column: 1;
+    grid-row: 2;
+    animation-delay: -1s;
+}
+
+.mc-voxel:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+    animation-delay: -2.4s;
+}
+
+.mc-voxel:nth-child(3) {
+    grid-column: 2;
+    grid-row: 2;
+    animation-delay: -3.1s;
+}
+
+.mc-voxel:nth-child(4) {
+    grid-column: 3;
+    grid-row: 2;
+    animation-delay: -0.4s;
+}
+
+.mc-voxel:nth-child(5) {
+    grid-column: 3;
+    grid-row: 1;
+    animation-delay: -4s;
+}
+
+.mc-block-cluster-night .mc-voxel {
+    filter: saturate(0.58) brightness(0.62);
+    box-shadow: inset 0 9px 0 rgba(255, 255, 255, 0.08), inset 0 -8px 0
+        rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes tutorial-photo-shape {
+    from {
+        border-radius: 37% 63% 44% 56% / 48% 41% 59% 52%;
+    }
+    to {
+        border-radius: 52% 48% 58% 42% / 41% 53% 47% 59%;
+    }
+}
+
+@keyframes wolf-photo-shape {
+    from {
+        border-radius: 56% 44% 41% 59% / 42% 53% 47% 58%;
+    }
+    to {
+        border-radius: 44% 56% 55% 45% / 54% 43% 57% 46%;
+    }
+}
+
+@keyframes wolf-pixel-moon {
+    0%,
+    100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+    50% {
+        transform: translateY(-9px) rotate(2deg);
+    }
+}
+
+@keyframes mc-voxel-float {
+    0%,
+    100% {
+        translate: 0 0;
+        rotate: -1deg;
+    }
+    50% {
+        translate: 0 -7px;
+        rotate: 2deg;
+    }
+}
+
+@keyframes mc-decor-block-float {
+    0%,
+    100% {
+        translate: 0 0;
+    }
+    50% {
+        translate: 0 -10px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .kid-map-card:nth-child(1),
+    .kid-map-card:nth-child(5) {
+        transform: rotate(-0.7deg);
+    }
+
+    .kid-map-card:nth-child(3),
+    .kid-map-card:nth-child(6) {
+        transform: rotate(0.7deg);
+    }
+
+    .kid-map-card:hover {
+        transform: translateY(-0.45rem) rotate(0deg);
+    }
+}
+
+.creative-marquee {
+    transform: rotate(-1.25deg) scale(1.02);
+}
+
+.creative-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: creative-marquee 24s linear infinite;
+}
+
+.creative-marquee-track > div {
+    display: flex;
+    align-items: center;
+}
+
+.view-reveal {
+    animation: view-reveal 0.8s ease-out both;
+}
+
+.wolf-teaser-image {
+    transition: filter 0.8s ease, transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+    filter: saturate(0.45) contrast(1.08) brightness(0.65);
+}
+
+.wolf-teaser:hover .wolf-teaser-image {
+    transform: scale(1.035);
+    filter: saturate(0.75) contrast(1.1) brightness(0.72);
+}
+
+.werewolf-transition-overlay {
+    clip-path: circle(0 at calc(100% - 160px) 38px);
+    animation: werewolf-transition-reveal 0.72s cubic-bezier(0.76, 0, 0.24, 1)
+        forwards;
+}
+
+.werewolf-transition-mark {
+    opacity: 0;
+    transform: scale(0.7);
+    animation: werewolf-mark-in 0.35s ease-out 0.27s forwards;
+}
+
+.wolf-hero-image {
+    animation: wolf-hero-drift 16s ease-in-out infinite alternate;
+    transform: scale(1.04);
+}
+
+.wolf-moon {
+    animation: wolf-moon-pulse 6s ease-in-out infinite;
+    box-shadow: 0 0 90px rgba(248, 113, 113, 0.22);
+}
+
+.wolf-grain {
+    background-image: radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 255, 255, 0.08) 0 1px,
+            transparent 1px
+        ),
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(255, 255, 255, 0.05) 0 1px,
+            transparent 1px
+        );
+    background-size: 17px 17px, 23px 23px;
+    mix-blend-mode: soft-light;
+}
+
+@supports (animation-timeline: view()) {
+    .view-reveal {
+        animation-timeline: view();
+        animation-range: entry 5% cover 28%;
+    }
+}
+
+@keyframes hero-world-drift {
+    from {
+        transform: scale(1.06) translate3d(-0.5%, -0.5%, 0);
+    }
+    to {
+        transform: scale(1.11) translate3d(1%, 0.8%, 0);
+    }
+}
+
+@keyframes storybook-orbit {
+    from {
+        border-radius: 42% 58% 48% 52% / 45% 42% 58% 55%;
+    }
+    to {
+        border-radius: 50% 50% 42% 58% / 52% 48% 52% 48%;
+    }
+}
+
+@keyframes storybook-avatar {
+    0%,
+    100% {
+        transform: translateY(0) rotate(-0.5deg);
+    }
+    50% {
+        transform: translateY(-12px) rotate(0.7deg);
+    }
+}
+
+@keyframes float-word {
+    0%,
+    100% {
+        translate: 0 0;
+    }
+    50% {
+        translate: 0 -8px;
+    }
+}
+
+@keyframes ghost-word-drift {
+    from {
+        transform: translateX(-2%);
+    }
+    to {
+        transform: translateX(2%);
+    }
+}
+
+@keyframes orbit-stamp {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes photo-chip-float {
+    0%,
+    100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+    50% {
+        transform: translateY(-12px) rotate(1deg);
+    }
+}
+
+@keyframes hero-avatar-float {
+    0%,
+    100% {
+        transform: translateY(0) rotate(-0.4deg);
+    }
+    50% {
+        transform: translateY(-14px) rotate(0.6deg);
+    }
+}
+
+@keyframes status-float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+@keyframes portal-arrive {
+    from {
+        opacity: 0;
+        transform: translateY(36px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes creative-marquee {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes view-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(48px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes werewolf-transition-reveal {
+    to {
+        clip-path: circle(160vmax at calc(100% - 160px) 38px);
+    }
+}
+
+@keyframes werewolf-mark-in {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes wolf-hero-drift {
+    from {
+        transform: scale(1.04) translateX(-0.5%);
+    }
+    to {
+        transform: scale(1.1) translateX(1%);
+    }
+}
+
+@keyframes wolf-moon-pulse {
+    0%,
+    100% {
+        opacity: 0.78;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.035);
+    }
 }
 
 /* カスタムキーフレーム */

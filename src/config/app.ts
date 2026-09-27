@@ -1,5 +1,3 @@
-import type { CarouselConfig } from '@/types';
-
 export const APP_CONFIG = {
     name: 'Yomogi Server',
     description: '建てて、遊んで、暮らしを紡ぐMCBE生活サーバー',
@@ -7,10 +5,5 @@ export const APP_CONFIG = {
     author: 'Yomogi Server Team',
 } as const;
 
-export const CAROUSEL_CONFIG: CarouselConfig = {
-    autoPlay: true,
-    autoPlayInterval: 5000,
-    showArrows: true,
-    showIndicators: true,
-    pauseOnHover: false,
-};
+// false に戻すと、初めての方向けページと各入口が再び有効になります。
+export const TUTORIAL_UNDER_CONSTRUCTION = true;
