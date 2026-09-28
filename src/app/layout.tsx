@@ -8,7 +8,7 @@ import { siteLinks } from '@/data/links';
 import { serverInfo } from '@/data/server';
 import type React from 'react';
 
-const siteUrl = 'https://ymg24.org';
+const siteUrl = 'https://www.ymg24.org';
 const siteDescription =
     '建築、経済、会社、イベントを楽しめる、24時間参加可能なMinecraft Bedrock Edition生活サーバー。参加方法、利用規約、ガイド、最新情報を公式ポータルから確認できます。';
 
@@ -42,9 +42,10 @@ export const metadata: Metadata = {
         description: siteDescription,
         images: [
             {
-                url: '/pictures/index/top/life1.png',
-                width: 1920,
-                height: 1080,
+                url: '/og-image.jpg',
+                width: 1200,
+                height: 630,
+                type: 'image/jpeg',
                 alt: 'よもぎサーバーの都市エリア',
             },
         ],
@@ -53,7 +54,7 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         title: 'よもぎサーバー | Minecraft BE 生活サーバー',
         description: siteDescription,
-        images: ['/pictures/index/top/life1.png'],
+        images: ['/og-image.jpg'],
     },
     robots: {
         index: true,
