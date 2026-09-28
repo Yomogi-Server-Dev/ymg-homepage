@@ -1,7 +1,6 @@
 'use client';
 
-import { Badge } from '@/components/ui/badge';
-import { Card } from '@/components/ui/card';
+import { serverInfo } from '@/data/server';
 import { Activity, Server, Users } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
@@ -9,122 +8,179 @@ interface ServerData {
     online: boolean;
     players: number;
     maxPlayers: number;
-    version: string;
-    software: string;
 }
 
-export function ServerStatus() {
-    const [serverData, setServerData] = useState<ServerData>({
-        online: false,
-        players: 0,
-        maxPlayers: 50,
-        version: 'Unknown',
-        software: 'PocketMine-MP',
-    });
-    const [loading, setLoading] = useState(true);
+interface ServerStatusProps {
+    variant?: 'default' | 'compact';
+}
+
+const fallbackData: ServerData = {
+    online: false,
+    players: 0,
+    maxPlayers: 50,
+};
+
+let cachedServerData: ServerData | null = null;
+let cacheUpdatedAt = 0;
+let pendingServerRequest: Promise<ServerData> | null = null;
+
+function loadServerStatus() {
+    if (cachedServerData && Date.now() - cacheUpdatedAt < 15000) {
+        return Promise.resolve(cachedServerData);
+    }
+
+    if (!pendingServerRequest) {
+        pendingServerRequest = fetch('/api/server-status')
+            .then((response) => {
+                if (!response.ok) throw new Error('Failed to fetch status');
+                return response.json() as Promise<ServerData>;
+            })
+            .then((data) => {
+                cachedServerData = data;
+                cacheUpdatedAt = Date.now();
+                return data;
+            })
+            .finally(() => {
+                pendingServerRequest = null;
+            });
+    }
+
+    return pendingServerRequest;
+}
+
+export function ServerStatus({ variant = 'default' }: ServerStatusProps) {
+    const [serverData, setServerData] = useState<ServerData>(
+        cachedServerData ?? fallbackData,
+    );
+    const [loading, setLoading] = useState(cachedServerData === null);
 
     useEffect(() => {
+        let active = true;
+
         const fetchServerStatus = async () => {
             try {
-                const response = await fetch('/api/server-status');
-                const data = await response.json();
-                setServerData(data);
-                setLoading(false);
+                const data = await loadServerStatus();
+                if (active) setServerData(data);
             } catch (error) {
-                console.error('Failed to fetch server status:', error);
-                // エラー時は既存のデータを保持
-                console.log('Using fallback data');
-                setLoading(false);
+                if (active && error instanceof Error) {
+                    console.error('Failed to fetch server status:', error);
+                }
+            } finally {
+                if (active) setLoading(false);
             }
         };
 
         fetchServerStatus();
-        // 30秒ごとに更新
-        const interval = setInterval(fetchServerStatus, 30000);
-        return () => clearInterval(interval);
+        const interval = window.setInterval(fetchServerStatus, 30000);
+
+        return () => {
+            active = false;
+            window.clearInterval(interval);
+        };
     }, []);
 
-    return (
-        <Card className='p-6 my-4 max-w-4xl mx-auto'>
-            <div className='grid md:grid-cols-3 gap-6'>
-                {/* サーバー状態 */}
-                <div className='flex items-center gap-4'>
-                    <div className='p-3 rounded-lg bg-primary/10'>
-                        <Server className='w-6 h-6 text-primary' />
-                    </div>
+    if (variant === 'compact') {
+        return (
+            <div
+                aria-live='polite'
+                aria-busy={loading}
+                className='flex flex-wrap items-center gap-x-5 gap-y-3 rounded-2xl border border-white/70 bg-white/95 px-5 py-4 text-slate-900 shadow-2xl backdrop-blur-md'
+            >
+                <div className='flex items-center gap-3'>
+                    <span
+                        className={`size-2.5 rounded-full ${
+                            loading
+                                ? 'animate-pulse bg-amber-400'
+                                : serverData.online
+                                  ? 'bg-lime-500 shadow-[0_0_0_5px_rgba(132,204,22,0.15)]'
+                                  : 'bg-rose-500 shadow-[0_0_0_5px_rgba(244,63,94,0.12)]'
+                        }`}
+                    />
                     <div>
-                        <p className='text-sm text-gray-500'>サーバー状態</p>
-                        <div className='flex items-center gap-2'>
-                            <Activity
-                                className={`w-4 h-4 ${serverData.online ? 'text-green-500' : 'text-red-500'}`}
-                            />
-                            <Badge
-                                variant={
-                                    serverData.online
-                                        ? 'default'
-                                        : 'destructive'
-                                }
-                            >
-                                {loading
-                                    ? 'Loading...'
-                                    : serverData.online
-                                      ? 'Online'
-                                      : 'Offline'}
-                            </Badge>
-                        </div>
-                    </div>
-                </div>
-
-                {/* プレイヤー数 */}
-                <div className='flex items-center gap-4'>
-                    <div className='p-3 rounded-lg bg-primary/10'>
-                        <Users className='w-6 h-6 text-primary' />
-                    </div>
-                    <div>
-                        <p className='text-sm text-gray-500'>
-                            現在のプレイヤー数
+                        <p className='text-[11px] font-bold uppercase tracking-[0.14em] text-slate-400'>
+                            Server status
                         </p>
-                        <p className='text-2xl font-bold text-primary'>
+                        <p className='text-sm font-bold'>
                             {loading
-                                ? '...'
-                                : `${serverData.players} / ${serverData.maxPlayers}`}
-                            <span className='text-base font-normal text-gray-600 ml-1'>
-                                人
-                            </span>
+                                ? '確認中…'
+                                : serverData.online
+                                  ? 'オンライン'
+                                  : 'オフライン'}
                         </p>
                     </div>
                 </div>
+                <div className='flex items-center gap-2'>
+                    <Users className='size-4 text-lime-600' />
+                    <p className='text-sm font-bold'>
+                        {loading ? '—' : serverData.players}
+                        <span className='ml-1 font-medium text-slate-400'>
+                            / {serverData.maxPlayers}人
+                        </span>
+                    </p>
+                </div>
+                <div className='ml-auto hidden text-right sm:block'>
+                    <p className='text-[11px] text-slate-400'>ADDRESS</p>
+                    <code className='text-xs font-bold text-slate-700'>
+                        {serverInfo.address}:{serverInfo.port}
+                    </code>
+                </div>
+            </div>
+        );
+    }
 
-                {/* バージョン */}
+    return (
+        <div
+            aria-live='polite'
+            aria-busy={loading}
+            className='rounded-3xl border border-slate-200 bg-white p-6 shadow-sm'
+        >
+            <div className='grid gap-6 md:grid-cols-3'>
                 <div className='flex items-center gap-4'>
-                    <div className='p-3 rounded-lg bg-primary/10'>
-                        <Server className='w-6 h-6 text-primary' />
+                    <div className='flex size-12 items-center justify-center rounded-2xl bg-lime-100'>
+                        <Activity className='size-5 text-lime-700' />
                     </div>
                     <div>
-                        <p className='text-sm text-gray-500'>バージョン</p>
-                        <p className='text-lg font-semibold'>
-                            {serverData.version}
+                        <p className='text-xs font-semibold text-slate-400'>
+                            サーバー状態
                         </p>
-                        <p className='text-xs text-gray-500'>
-                            {serverData.software}
+                        <p className='font-bold text-slate-900'>
+                            {loading
+                                ? '確認中…'
+                                : serverData.online
+                                  ? 'オンライン'
+                                  : 'オフライン'}
                         </p>
                     </div>
                 </div>
-            </div>
-
-            {/* 接続情報 */}
-            <div className='mt-6 p-4 bg-gray-50 rounded-lg'>
-                <p className='text-sm text-gray-600 mb-2'>サーバーアドレス</p>
-                <div className='flex items-center gap-2 flex-wrap'>
-                    <code className='text-lg font-mono bg-white px-3 py-1 rounded border'>
-                        ymg24.org
-                    </code>
-                    <span className='text-gray-500'>:</span>
-                    <code className='text-lg font-mono bg-white px-3 py-1 rounded border'>
-                        19132
-                    </code>
+                <div className='flex items-center gap-4'>
+                    <div className='flex size-12 items-center justify-center rounded-2xl bg-lime-100'>
+                        <Users className='size-5 text-lime-700' />
+                    </div>
+                    <div>
+                        <p className='text-xs font-semibold text-slate-400'>
+                            プレイヤー
+                        </p>
+                        <p className='font-bold text-slate-900'>
+                            {loading
+                                ? '—'
+                                : `${serverData.players} / ${serverData.maxPlayers}人`}
+                        </p>
+                    </div>
+                </div>
+                <div className='flex items-center gap-4'>
+                    <div className='flex size-12 items-center justify-center rounded-2xl bg-lime-100'>
+                        <Server className='size-5 text-lime-700' />
+                    </div>
+                    <div>
+                        <p className='text-xs font-semibold text-slate-400'>
+                            サーバーアドレス
+                        </p>
+                        <code className='font-mono text-sm font-bold text-slate-900'>
+                            {serverInfo.address}:{serverInfo.port}
+                        </code>
+                    </div>
                 </div>
             </div>
-        </Card>
+        </div>
     );
 }

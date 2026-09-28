@@ -35,6 +35,7 @@ export async function GET() {
                 headers: {
                     Accept: 'application/json',
                 },
+                signal: AbortSignal.timeout(5000),
                 // キャッシュを60秒に設定
                 next: { revalidate: 60 },
             },

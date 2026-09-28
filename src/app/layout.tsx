@@ -1,28 +1,103 @@
 import type { Metadata } from 'next';
+import '@fontsource-variable/manrope';
+import '@fontsource-variable/noto-sans-jp';
 import './globals.css';
 import { Footer } from '@/components/layout/footer';
 import { Header } from '@/components/layout/header';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { siteLinks } from '@/data/links';
+import { serverInfo } from '@/data/server';
 import type React from 'react';
 
-const geistSans = Geist({
-    variable: '--font-geist-sans',
-    subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-    variable: '--font-geist-mono',
-    subsets: ['latin'],
-});
+const siteUrl = 'https://ymg24.org';
+const siteDescription =
+    '建築、経済、会社、イベントを楽しめる、24時間参加可能なMinecraft Bedrock Edition生活サーバー。参加方法、利用規約、ガイド、最新情報を公式ポータルから確認できます。';
 
 export const metadata: Metadata = {
-    title: 'Yomogi Server',
-    description:
-        '24時間365日いつでもログイン可能なMCBE版生活サーバーです！経済システムや豊富なコンテンツで、初心者から上級者まで楽しめます！',
-    keywords: 'Minecraft, MCBE, サーバー, サバイバル,生活鯖, Yomogi Server',
+    metadataBase: new URL(siteUrl),
+    title: {
+        default: 'よもぎサーバー | Minecraft BE 生活サーバー',
+        template: '%s | よもぎサーバー',
+    },
+    description: siteDescription,
+    applicationName: 'Yomogi Server',
+    authors: [{ name: 'Yomogi Server Team', url: siteUrl }],
+    creator: 'Yomogi Server Team',
+    publisher: 'Yomogi Server Team',
+    category: 'game',
+    keywords: [
+        'Minecraft',
+        'Minecraft Bedrock Edition',
+        'MCBE',
+        '生活サーバー',
+        'マイクラサーバー',
+        'よもぎサーバー',
+        'Yomogi Server',
+    ],
+    openGraph: {
+        type: 'website',
+        locale: 'ja_JP',
+        url: siteUrl,
+        siteName: 'Yomogi Server',
+        title: 'よもぎサーバー | 建てて、遊んで、暮らしを紡ぐ。',
+        description: siteDescription,
+        images: [
+            {
+                url: '/pictures/index/top/life1.png',
+                width: 1920,
+                height: 1080,
+                alt: 'よもぎサーバーの都市エリア',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'よもぎサーバー | Minecraft BE 生活サーバー',
+        description: siteDescription,
+        images: ['/pictures/index/top/life1.png'],
+    },
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+            'max-video-preview': -1,
+        },
+    },
     icons: {
         icon: '/favicon.ico',
+        apple: '/icon.png',
     },
+};
+
+const structuredData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+        {
+            '@type': 'WebSite',
+            '@id': `${siteUrl}/#website`,
+            url: siteUrl,
+            name: 'Yomogi Server',
+            alternateName: 'よもぎサーバー',
+            description: siteDescription,
+            inLanguage: 'ja-JP',
+            publisher: { '@id': `${siteUrl}/#organization` },
+        },
+        {
+            '@type': 'Organization',
+            '@id': `${siteUrl}/#organization`,
+            name: 'Yomogi Server',
+            url: siteUrl,
+            logo: `${siteUrl}/icon.png`,
+            sameAs: [
+                serverInfo.discordInvite,
+                siteLinks.youtube,
+                siteLinks.youtubeHt,
+            ],
+        },
+    ],
 };
 
 export default function RootLayout({
@@ -32,12 +107,13 @@ export default function RootLayout({
 }) {
     return (
         <html lang='ja'>
-            <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-            >
+            <body className='antialiased'>
+                <script type='application/ld+json'>
+                    {JSON.stringify(structuredData)}
+                </script>
                 <div className='min-h-screen bg-primary-50/20 flex flex-col'>
                     <Header />
-                    <div className='flex-1'>{children}</div>
+                    <div className='flex flex-1 flex-col'>{children}</div>
                     <Footer />
                 </div>
             </body>
