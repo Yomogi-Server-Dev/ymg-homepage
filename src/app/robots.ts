@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
             userAgent: '*',
             allow: '/',
         },
-        sitemap: 'https://ymg24.org/sitemap.xml',
-        host: 'https://ymg24.org',
+        sitemap: 'https://www.ymg24.org/sitemap.xml',
+        host: 'https://www.ymg24.org',
     };
 }

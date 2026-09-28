@@ -35,7 +35,7 @@ export function WerewolfTeaserSection() {
                     </p>
                     <div className='mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-black text-white/80'>
                         <Clock3 className='size-4 text-[#ff9b9b]' />
-                        毎週土曜日 21:00〜
+                        毎週土曜日 21:30〜
                     </div>
                     <div className='mt-8'>
                         <WerewolfPortalLink />

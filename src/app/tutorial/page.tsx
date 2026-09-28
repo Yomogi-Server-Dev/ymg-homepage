@@ -71,8 +71,8 @@ const howToData = {
         position: index + 1,
         name: step.title,
         text: `${step.description} ${step.commands.map((command) => `${command.value}：${command.label}。`).join(' ')} ${step.action}`,
-        url: `https://ymg24.org/tutorial#${step.id}`,
-        image: `https://ymg24.org${step.image}`,
+        url: `https://www.ymg24.org/tutorial#${step.id}`,
+        image: `https://www.ymg24.org${step.image}`,
     })),
 };
 

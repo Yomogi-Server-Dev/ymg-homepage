@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { TUTORIAL_UNDER_CONSTRUCTION } from '@/config/app';
 
-const baseUrl = 'https://ymg24.org';
+const baseUrl = 'https://www.ymg24.org';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     return [
